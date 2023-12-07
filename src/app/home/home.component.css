@@ -1,0 +1,399 @@
+/*body{*/
+/*  margin-top:20px;*/
+/*  color: #1a202c;*/
+/*  text-align: left;*/
+/*  background-color: #e2e8f0;*/
+/*}*/
+/*.main-body {*/
+/*  padding: 15px;*/
+/*}*/
+/*.card {*/
+/*  box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);*/
+/*}*/
+
+/*.card {*/
+/*  position: relative;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  min-width: 0;*/
+/*  word-wrap: break-word;*/
+/*  background-color: #fff;*/
+/*  background-clip: border-box;*/
+/*  border: 0 solid rgba(0,0,0,.125);*/
+/*  border-radius: .25rem;*/
+/*}*/
+
+/*.card-body {*/
+/*  flex: 1 1 auto;*/
+/*  min-height: 1px;*/
+/*  padding: 1rem;*/
+/*}*/
+
+/*.gutters-sm {*/
+/*  margin-right: -8px;*/
+/*  margin-left: -8px;*/
+/*}*/
+
+/*.gutters-sm>.col, .gutters-sm>[class*=col-] {*/
+/*  padding-right: 8px;*/
+/*  padding-left: 8px;*/
+/*}*/
+/*.mb-3, .my-3 {*/
+/*  margin-bottom: 1rem!important;*/
+/*}*/
+
+/*.bg-gray-300 {*/
+/*  background-color: #e2e8f0;*/
+/*}*/
+/*.h-100 {*/
+/*  height: 100%!important;*/
+/*}*/
+/*.shadow-none {*/
+/*  box-shadow: none!important;*/
+/*}*/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Saira', sans-serif;
+}
+
+
+.container {
+  max-width: 1200px; /* Set the maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+}
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+}
+
+.navbar ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.navbar li {
+  margin: 0 10px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar .right {
+  display: flex;
+  align-items: center;
+}
+/* Set the hero section to cover the entire viewport height */
+.hero-section {
+  height: 92vh;
+  background-color: #C4C3F4;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+/* Define container styles */
+.hero-section .container {
+  max-width: 1200px; /* Set the maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  display: flex; /* Maintain flex layout for child elements */
+  align-items: center; /* Vertically center the child elements */
+}
+
+/* Adjust .text and .blockchain-image styles as needed */
+.text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align text content to the left */
+}
+
+.text h1 {
+  font-size: 60px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.start-learning-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 2px solid #fff;
+  color: #fff;
+  background: transparent;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 10px;
+  border-radius: 20px;
+}
+
+.blockchain-image {
+  flex: 1;
+  text-align: right;
+}
+
+.blockchain-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.categories-title h2{
+  text-align: center;
+  font-weight: 700;
+}
+
+.card-container {
+
+  display: flex; /* Display the cards in a row */
+  justify-content: space-between; /* Distribute space between the cards */
+}
+
+.card {
+  width: calc(16.666% - 10px);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: none;
+  padding: 20px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  display: flex; /* Add flex display to center the content */
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center content horizontally */
+  text-align: center; /* Center text within the card */
+  transition: transform 0.2s; /* Add transition for a smooth effect */
+}
+
+.card:hover {
+  transform: translateY(-5px); /* Move the card up when hovered */
+}
+
+
+.card h2{
+  font-size: 18px;
+  text-align: center;
+}
+
+
+
+/* Reduce the size of the image */
+.card img {
+  width: 60px; /* Set the desired width */
+  height: auto; /* Maintain the aspect ratio */
+  margin-bottom: 10px;
+}
+
+.courses-section{
+  background: linear-gradient(to bottom, #fff, #C4C3F4);
+  padding-bottom: 20px;
+}
+
+
+.courses-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.courses-title{
+  text-align: center;
+  margin: 20px 0 40px 0;
+  font-weight: 0
+}
+
+.course-card {
+  width: calc(33.33% - 10px);
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.course-image {
+  width: 100%;
+  height: 200px;
+  background: url("src/assets/blockchain-course-img.jpg") center/cover no-repeat;
+  overflow: hidden;
+  border-radius: 10px 10px 0 0;
+}
+
+.course-image img {
+  display: none;
+}
+
+.course-content {
+  padding: 10px;
+  margin-left: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.course-card h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+p {
+  margin: 5px 0;
+}
+
+.buy-icon {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+}
+
+.price-and-buy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.view-all-courses-btn {
+  display: block;
+  margin: 20px auto; /* Center the button horizontally and provide vertical spacing */
+  background-color: #908fc2; /* Set the background color to #908fc2 */
+  color: #fff; /* White text color */
+  padding: 10px 20px;
+  border: none; /* Remove the border */
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s; /* Add a transition for the background color */
+}
+
+.view-all-courses-btn:hover {
+  background-color: #908fc2; /* Change background color on hover to the same color */
+}
+
+
+.suitable-for-training-section {
+  padding-top: 40px;
+  text-align: center; /* Center-align the section's content */
+  background-color: #C4C3F4;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.section-subtitle {
+  font-size: 16px;
+  width: 40%;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.blocks-container {
+  display: flex;
+  justify-content: center; /* Center the blocks horizontally */
+  align-items: center;
+}
+
+.block {
+  flex: 1;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Используйте тот же стиль для всех блоков в контейнере */
+
+
+
+
+.icon {
+  font-size: 32px; /* Adjust the icon size as needed */
+  margin-bottom: 10px;
+}
+
+/* Add your icon styles here */
+
+.block p {
+  font-size: 18px;
+  font-weight: 700;
+  max-width: 50%;
+  margin: 0 auto;
+}
+
+
+.testimonials-section {
+  background-color: #fff;
+  text-align: center;
+  padding: 100px 0;
+
+}
+
+.testimonials-container {
+  margin-top: 80px;
+  display: flex;
+  justify-content: center;
+}
+
+.testimonial {
+  flex: 0 0 30%;
+  margin: 0 20px;
+  background-color: #fff;
+  border-radius: 10px; /* Добавляем закругление углов */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Добавляем тень (можно настроить параметры тени) */
+  padding: 20px;
+  text-align: left;
+}
+
+
+.user-info {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+.user-image img {
+  width: 40px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 20px;
+  margin-left: 20px;
+  font-weight: 700;
+}
+
+.testimonial-text {
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+.rating {
+  font-size: 24px;
+}
+
+.star {
+  color: #fdd835; /* Adjust the star color as needed */
+}
+
+
+
+

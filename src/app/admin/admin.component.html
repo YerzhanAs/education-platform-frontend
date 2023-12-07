@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-uppercase mb-0">Manage Users</h5>
+        </div>
+        <div class="table-responsive">
+          <table class="table no-wrap user-table mb-0">
+            <thead>
+            <tr>
+              <th scope="col" class="border-0 text-uppercase font-medium pl-4">#</th>
+              <th scope="col" class="border-0 text-uppercase font-medium">Name</th>
+              <th scope="col" class="border-0 text-uppercase font-medium">Email</th>
+              <th scope="col" class="border-0 text-uppercase font-medium">Roles</th>
+              <th scope="col" class="border-0 text-uppercase font-medium">Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users">
+              <td class="pl-4">{{ user.id }}</td>
+              <td>
+                <h5 class="font-medium mb-0">{{ user.username }}</h5>
+              </td>
+              <td>
+                <span class="text-muted">{{ user.email }}</span><br>
+              </td>
+              <td>
+                <select class="form-control category-select" id="exampleFormControlSelect1">
+                  <option *ngFor="let role of user.roles" [value]="role.name">{{ role.name }}</option>
+                </select>
+              </td>
+              <td>
+                <button class="btn btn-primary btn-sm " > Update </button>
+                <button class="btn btn-danger btn-sm" (click)="deleteUser(user.id)"> Delete </button>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card-footer">
+          <button class="btn btn-success "  data-bs-toggle="modal" data-bs-target="#exampleModal">Add User</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Add new user</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input type="text" class="form-control" id="username" [(ngModel)]="userUpdateDTO.username" placeholder="Enter username">
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" [(ngModel)]="userUpdateDTO.email" placeholder="Enter email">
+        </div>
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" id="password" [(ngModel)]="userUpdateDTO.password" placeholder="Enter password">
+        </div>
+        <div class="mb-3">
+          <label for="roles" class="form-label">Roles (optional)</label>
+          <select class="form-control" id="roles" multiple [(ngModel)]="userUpdateDTO.roles">
+            <option value="ADMIN">admin</option>
+            <option value="MODERATOR">md</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)="saveChanges()">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+

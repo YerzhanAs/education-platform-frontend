@@ -1,0 +1,62 @@
+<!--&lt;!&ndash; course-list.component.html &ndash;&gt;-->
+
+<!--<div class="container" id="main-container">-->
+<!--  <div class="row">-->
+<!--    <div *ngFor="let course of coursesList" class="col-md-6 col-xl-3">-->
+<!--      <div class="card m-b-30">-->
+<!--        <div class="card-body">-->
+<!--          <h5 class="card-title">{{ course.name }}</h5>-->
+<!--          <p class="card-text">{{ course.description }}</p>-->
+<!--          <p class="card-text">Difficulty: {{ course.levelDifficulty }}</p>-->
+<!--          <p class="card-text">Created on: {{ course.dateCreated | date }}</p>-->
+<!--        </div>-->
+<!--        <div class="card-body">-->
+<!--          <div class="row">-->
+<!--            <div class="col-6">-->
+<!--              <a href=""><img src="https://www.google.com/imgres?imgurl=https%3A%2F%2Fwww.w3schools.com%2Fbootstrap4%2Fimg_avatar3.png&tbnid=Jjq5a5o5G80fpM&vet=12ahUKEwiN2_mGuciCAxWBGRAIHbMSAdkQMygDegQIARBK..i&imgrefurl=https%3A%2F%2Fwww.w3schools.com%2Fbootstrap4%2Fbootstrap_cards.asp&docid=7noH9ojLCQxpSM&w=499&h=498&q=bootstrap%20avatar%20card&ved=2ahUKEwiN2_mGuciCAxWBGRAIHbMSAdkQMygDegQIARBK" alt="" class="img-fluid"></a>-->
+<!--            </div>-->
+<!--            <div class="col-6 card-title align-self-center mb-0">-->
+<!--              <h5>{{ course.name }}</h5>-->
+<!--              <p class="m-0">Difficulty: {{ course.levelDifficulty }}</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-body">-->
+<!--          <div class="float-right btn-group btn-group-sm">-->
+<!--            <a class="btn btn-primary">Enroll</a>-->
+<!--            <a class="btn btn-secondary tooltips" data-placement="top"-->
+<!--               data-original-title="Edit"><i class="fa fa-pencil"></i> Edit</a>-->
+<!--            <a  class="btn btn-danger tooltips" data-placement="top"-->
+<!--               data-original-title="Delete"><i class="fa fa-times"></i> Delete</a>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+<div class="container" id="main-container">
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div *ngFor="let course of coursesList" class="col">
+      <div class="card h-100">
+        <img src='assets/img.png' class="card-img-top" alt="Course Image" width="150" height="200">
+        <div class="card-body">
+          <h5 class="card-title">{{ course.name }}</h5>
+          <p class="card-text">{{ course.description }}</p>
+          <p class="card-text">Difficulty: {{ course.levelDifficulty }}</p>
+          <p class="card-text">Created on: {{ course.dateCreated | date }}</p>
+        </div>
+        <div class="card-body">
+          <div class="float-right btn-group btn-group-sm">
+            <button class="btn btn-primary btn-sm mr-2" > Edit </button>
+            <button class="btn btn-secondary btn-sm mr-2" (click)="enrollUser(course.id)"> Enroll </button>
+            <button class="btn btn-danger btn-sm" > Delete </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
