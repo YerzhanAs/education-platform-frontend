@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1200px; /* Set a max-width for the container */
+  margin: auto;
+  padding: 0 15px; /* Add some padding on the sides */
+}
+
+header{
+  padding: 5px 0 0 0;
+  background: #FDF8EE;
+}
+
+header nav {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px; /* Adjust as per the actual logo size */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Adjust the space between the links as needed */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333; /* Adjust navbar item color as needed */
+  font-weight: bold;
+}
+
+.sign-in-btn {
+  background-color: #4D2C5E;
+  border: none;
+  color: white;
+  padding: 3px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-btn:hover {
+  background-color: #6841a9; /* Darken the button on hover */
+}
