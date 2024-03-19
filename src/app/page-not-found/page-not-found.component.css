@@ -1,0 +1,39 @@
+.not-found-container {
+  max-width: 600px;
+  width: 90%; /* makes sure there is space around on smaller screens */
+  margin: 40px; /* centers in the browser window */
+  padding: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: white;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.not-found-container h1 {
+  font-size: 96px;
+  color: #7300ff;
+  margin: 0;
+}
+
+.not-found-container p {
+  color: #555;
+  margin: 10px 0;
+}
+
+.home-link {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background: #7300ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+}
+
+.home-link:hover {
+  background: #5a00cc;
+}

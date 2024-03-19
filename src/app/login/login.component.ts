@@ -26,13 +26,11 @@ export class LoginComponent implements OnInit {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getAuthorities();
-      this.router.navigate(['/home']);
     }
   }
 
   // tslint:disable-next-line:typedef
   onSubmit() {
-    console.log('test this form');
     console.log(this.form);
 
     this.loginInfo = new AuthLoginInfo(

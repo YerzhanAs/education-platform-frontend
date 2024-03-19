@@ -1,8 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 
-import { UserService } from '../services/user.service';
-import {UserRequest} from '../services/user-request';
-import {UserUpdateDTO} from '../services/user-update.dto';
+import { UserService } from '../services/user/user.service';
+import {UserRequest} from '../services/user/user-request';
+import {UserUpdateDTO} from '../services/user/user-update.dto';
 
 
 @Component({
@@ -14,8 +14,6 @@ export class AdminComponent implements OnInit {
 
   users: UserRequest[] = [];
   userUpdateDTO: UserUpdateDTO = new UserUpdateDTO();
-
-
 
   constructor(private userService: UserService) {}
 
@@ -61,17 +59,4 @@ export class AdminComponent implements OnInit {
         }
       );
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }

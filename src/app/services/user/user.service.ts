@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TokenStorageService } from '../auth/token-storage.service';
+import { TokenStorageService } from '../../auth/token-storage.service';
 import {UserRequest} from './user-request';
 import {UserUpdateDTO} from './user-update.dto';
 

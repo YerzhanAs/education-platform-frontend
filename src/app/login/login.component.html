@@ -1,6 +1,11 @@
+<div class="main-section">
 <!-- login.component.html -->
 <div *ngIf="isLoggedIn; else loggedOut">
-  Logged in as {{ roles.join(', ') }}.
+  <div class="login-success">
+    <h1>Welcome Back!</h1>
+    <p>Your login was successful.</p>
+    <a href="profile" class="dashboard-link">Go to My Profile</a>
+  </div>
 </div>
 
 <ng-template #loggedOut>
@@ -42,3 +47,4 @@
   </div>
 </div>
 </ng-template>
+</div>

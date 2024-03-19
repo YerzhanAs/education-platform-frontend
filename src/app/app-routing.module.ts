@@ -8,11 +8,23 @@ import { UserComponent } from './user/user.component';
 import { PmComponent } from './pm/pm.component';
 import { AdminComponent } from './admin/admin.component';
 import {CourseComponent} from './course/course.component';
+import {HomeComponent} from './home/home.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
+import {AuthGuard} from './auth.guard';
 
 const routes: Routes = [
   {
+    path: 'notfound',
+    component: PageNotFoundComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent
+  },
+  {
     path: 'profile',
-    component: ProfileComponent
+    component: ProfileComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'user',
@@ -24,7 +36,8 @@ const routes: Routes = [
   },
   {
     path: 'course',
-    component: CourseComponent
+    component: CourseComponent,
+    canActivate: [AuthGuard]
   },
   {
       path: 'admin',
