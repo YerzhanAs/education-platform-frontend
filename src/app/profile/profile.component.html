@@ -1,11 +1,16 @@
-<div *ngIf="info.token; else loggedOut">
-  <h5 class="text-primary">Hello, Home!</h5>
-  <p>
-    <strong>Username: </strong> {{info.username}} <br/>
-    <strong>Roles:</strong> {{info.roles}} <br/>
-    <strong>Token:</strong> {{info.token}} <br/>
-  </p>
-  <button class="btn btn-secondary" (click)="logout()">Logout</button>
+<div class="container" *ngIf="info?.token; else loggedOut">
+  <div class="profile-header">
+    <img src="profile.png" alt="Profile Picture" class="profile-image">
+    <h1>{{info.username}}</h1>
+    <button class="edit-button">✎</button>
+  </div>
+  <div class="form-container">
+    <div class="input-group">
+      <strong>Username: </strong> {{info.username}} <br/>
+      <strong>Roles:</strong> {{info.roles}} <br/>
+      <strong>Token:</strong> {{info.token}} <br/>
+    </div>
+  </div>
 </div>
 
 <ng-template #loggedOut>

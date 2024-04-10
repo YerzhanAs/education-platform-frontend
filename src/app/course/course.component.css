@@ -1,32 +1,167 @@
 body{
-  margin-top:20px;
-  background: #f5f5f5;
+  font-family: 'Euclid Circular A', sans-serif;
+  margin: 0;
+  background-color: #f4f4f4;
 }
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+}
+
+.controls {
+  margin-top: 40px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.buttons-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.search-container {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+.search-btn{
+
+  padding: 18.5px;
+  border: 1px solid #CCCCCC;
+  border-left: none;
+  border-radius: 0 20px 20px 0;
+  background-color: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+}
+
+@media (max-width: 600px) {
+  .controls {
+    justify-content: flex-start;
+  }
+  .search-container {
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}
+
+
+.tab-button {
+  background-color: #FFFFFF; /* Фоновый цвет для неактивного состояния */
+  border: 1px solid #f4f4f4; /* Граница для кнопок */
+  border-radius: 20px; /* Закругление углов */
+  color: #333333; /* Цвет текста для неактивного состояния */
+  cursor: pointer; /* Курсор в виде указателя */
+  font-size: 14px; /* Размер шрифта */
+  margin: 0 5px; /* Отступы между кнопками */
+  padding: 10px 20px; /* Внутренние отступы */
+  outline: none; /* Убрать стандартный outline при фокусе */
+}
+
+.tab-button:hover {
+  background-color: #F0F0F0; /* Цвет фона для состояния наведения */
+}
+
+.tab-button.active {
+  background-color: #4D2C5E; /* Цвет фона активной кнопки */
+  color: #FFFFFF; /* Цвет текста активной кнопки */
+  border-color: #4D2C5E; /* Цвет границы активной кнопки */
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #CCCCCC;
+  border-radius: 20px 0 0 20px; /* Скругление только левых углов */
+  outline: none;
+}
+
+.search-button {
+  padding: 10px;
+  border: 1px solid #CCCCCC;
+  border-left: none; /* Убрать левую границу, которая сливается с input */
+  border-radius: 0 20px 20px 0; /* Скругление только правых углов */
+  background-color: #FFFFFF;
+  cursor: pointer;
+  outline: none;
+}
+
+.search-button .fas {
+  color: #333333;
+}
+
+.cards {
+  margin-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
 .card {
-  border: none;
-  -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
-  box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
-  margin-bottom: 30px;
+  background: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 300px; /* Ширина карточки */
+  margin-bottom: 20px;
 }
-.w-60 {
-  width: 60px;
+
+.card-content {
+  padding: 20px;
 }
-h1, h2, h3, h4, h5, h6 {
+
+.card-content h2 {
   margin: 0 0 10px;
-  font-weight: 600;
+  font-size: 24px;
 }
-.social-links li a {
-  -webkit-border-radius: 50%;
-  background-color: rgba(89,206,181,.85);
-  border-radius: 50%;
-  color: #fff;
+
+.card-content .price {
+  color: #007BFF;
+  font-size: 22px;
+  margin: 0;
+}
+
+.card-content .duration {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.card-content .info p {
+  background: #f2f2f2;
+  border-radius: 20px;
   display: inline-block;
-  height: 30px;
-  line-height: 30px;
-  text-align: center;
-  width: 30px;
-  font-size: 12px;
+  font-size: 14px;
+  margin: 5px 5px 5px 0;
+  padding: 5px 15px;
 }
-a {
-  color: #707070;
+
+.card-image {
+  background: url('/assets/course1.jpg') no-repeat center center;
+  background-size: cover;
+  height: 200px; /* Высота изображения */
 }
+
+.card-image img {
+  max-width: 100%; /* Изображение будет уменьшаться, если необходимо, но не станет больше своего естественного размера */
+  height: auto; /* Сохраняет пропорции изображения */
+}
+
+
+.space-below {
+  height: 80px;
+}
+
+
+

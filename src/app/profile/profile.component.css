@@ -1,0 +1,69 @@
+.container {
+  height: 100%;
+  background-color: #3457D5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #fff;
+  font-size: 2em;
+  margin: 0;
+}
+
+.edit-button {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+.form-container {
+  width: 90%;
+  max-width: 400px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  color: #fff;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.footer {
+  position: absolute;
+  bottom: 30px;
+}
+
+.footer-button {
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+}

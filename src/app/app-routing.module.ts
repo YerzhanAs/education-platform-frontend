@@ -36,8 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'course',
-    component: CourseComponent,
-    canActivate: [AuthGuard]
+    component: CourseComponent
   },
   {
       path: 'admin',

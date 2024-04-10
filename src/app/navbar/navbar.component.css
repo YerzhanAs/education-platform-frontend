@@ -7,7 +7,7 @@
 .container {
   max-width: 1200px; /* Set a max-width for the container */
   margin: auto;
-  padding: 0 15px; /* Add some padding on the sides */
+  padding: 10px 15px; /* Add some padding on the sides */
 }
 
 header{
