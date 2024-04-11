@@ -3,11 +3,11 @@ import { CourseService } from '../services/course/course.service';
 import { CourseDTO } from '../services/course/courseDTO';
 
 @Component({
-  selector: 'app-course',
-  templateUrl: './course.component.html',
-  styleUrls: ['./course.component.css']
+  selector: 'app-courses',
+  templateUrl: './courses.component.html',
+  styleUrls: ['./courses.component.css']
 })
-export class CourseComponent implements OnInit {
+export class CoursesComponent implements OnInit {
   public coursesList: CourseDTO[];
 
   constructor(private courseService: CourseService) {}

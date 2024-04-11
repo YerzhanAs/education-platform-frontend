@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule } from '@angular/common/http';
 
 import { httpInterceptorProviders } from './auth/auth-interceptor';
-import { CourseComponent} from './course/course.component';
+import { CoursesComponent} from './courses/courses.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
@@ -27,7 +27,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     ProfileComponent,
     UserComponent,
     PmComponent,
-    CourseComponent,
+    CoursesComponent,
     AdminComponent,
     NavbarComponent,
     HomeComponent,
