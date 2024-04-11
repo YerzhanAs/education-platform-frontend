@@ -3,7 +3,7 @@
   text-align: center; /* Center-aligns the text */
   max-width: 600px; /* Sets a max-width for the container */
   margin: 0 auto; /* Centers the container horizontally */
-  padding: 50px; /* Adds padding around the content */
+  padding: 150px 0 150px 0; /* Adds padding around the content */
   font-family: 'Arial', sans-serif; /* Sets a basic, readable font */
 }
 
