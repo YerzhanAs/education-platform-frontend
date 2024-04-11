@@ -1,9 +1,9 @@
 <div class="container">
   <div class="controls">
     <div class="buttons-container">
-      <button class="tab-button active">Все курсы</button>
-      <button class="tab-button">На русском</button>
-      <button class="tab-button">На казахском</button>
+      <button class="tab-button active" (click)="filterCoursesByLanguage('Все')">Все курсы</button>
+      <button class="tab-button" (click)="filterCoursesByLanguage('Русский')">На русском</button>
+      <button class="tab-button" (click)="filterCoursesByLanguage('Казахский')">На казахском</button>
     </div>
     <div class="search-container">
       <input type="text" class="search-input" placeholder="Поиск курсов...">
@@ -14,7 +14,7 @@
   </div>
 </div>
 <div class="cards">
-  <div class="card" *ngFor="let course of coursesList">
+  <div class="card" *ngFor="let course of filteredCoursesList">
     <div class="card-content">
       <h2>{{ course.name }}</h2>
       <p class="price">{{ course.name}} Т/мес</p>
