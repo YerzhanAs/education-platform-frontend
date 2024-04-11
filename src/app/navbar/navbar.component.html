@@ -1,7 +1,9 @@
 <header>
   <nav class="container">
     <div class="logo">
-      <img src="assets/logo.png" alt="BlockHub Logo">
+      <a routerLink="home">
+        <img src="assets/logo.png" alt="BlockHub Logo">
+      </a>
     </div>
     <ul class="nav-links">
       <li><a routerLink="home">Home</a></li>
@@ -10,6 +12,6 @@
       <li><a href="#">Our Service</a></li>
       <li><a href="#">Contact us</a></li>
     </ul>
-    <button class="sign-in-btn">Sign in</button>
+    <button routerLink="auth/login" class="sign-in-btn">Sign in</button>
   </nav>
 </header>
