@@ -3,12 +3,13 @@ import { CourseService } from '../services/course/course.service';
 import { CourseDTO } from '../services/course/courseDTO';
 
 @Component({
-  selector: 'app-course',
-  templateUrl: './course.component.html',
-  styleUrls: ['./course.component.css']
+  selector: 'app-courses',
+  templateUrl: './courses.component.html',
+  styleUrls: ['./courses.component.css']
 })
-export class CourseComponent implements OnInit {
-  public coursesList: CourseDTO[];
+export class CoursesComponent implements OnInit {
+  public coursesList: CourseDTO[] = [];
+  public filteredCoursesList: CourseDTO[] = [];
 
   constructor(private courseService: CourseService) {}
 
@@ -21,6 +22,7 @@ export class CourseComponent implements OnInit {
     this.courseService.getAllCourses().subscribe(
       (courses: CourseDTO[]) => {
         this.coursesList = courses;
+        this.filteredCoursesList = courses;
       },
       (error) => {
         alert(error.message);
@@ -39,5 +41,15 @@ export class CourseComponent implements OnInit {
           alert(`Enrollment failed: ${error.message || 'Unknown error'}`);
         }
       );
+  }
+
+  filterCoursesByLanguage(language: string): void {
+    console.log('ura');
+    this.filteredCoursesList = this.coursesList.filter(course => language === 'Все' ? true : course.language === language);
+  }
+
+  private handleError(error: any): void {
+    console.error('Request failed:', error);
+    alert(`Error: ${error.message || 'Unknown error'}`);
   }
 }

@@ -106,9 +106,13 @@ body{
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
+  align-items: stretch; /* Add this line */
 }
 
 .card {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: space-between; /* Space out the content */
   background: #FFFFFF;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -118,6 +122,9 @@ body{
 }
 
 .card-content {
+  display: flex;
+  flex-direction: column; /* New line */
+  height: 100%; /* New line: make the card content fill the parent height */
   padding: 20px;
 }
 
@@ -128,7 +135,7 @@ body{
 
 .card-content .price {
   color: #007BFF;
-  font-size: 22px;
+  font-size: 19px;
   margin: 0;
 }
 

@@ -1,57 +1,44 @@
-.footer {
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-  background-color: #FDF8EE;
-  color: #333;
-  font-family: Arial, sans-serif;
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+footer {
+  background-color: #F8F8F8; /* Цвет фона футера */
+  color: #333; /* Цвет текста */
+  padding: 20px 0; /* Верхний и нижний отступы */
+  font-size: 14px; /* Размер шрифта */
 }
 
-.container {
-  max-width: 1200px;
+.footer-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Отступы справа и слева */
 }
 
-.logo {
-  flex-basis: 25%;
+.footer-nav,
+.footer-social {
+  display: flex;
+  gap: 20px; /* Отступы между ссылками */
 }
 
-.logo img {
-  max-width: 100%;
-  height: auto;
-  margin-bottom: 20px;
+.footer-nav a,
+.footer-social a {
+  color: #333; /* Цвет ссылок */
+  text-decoration: none; /* Убрать подчеркивание */
+  transition: color 0.3s; /* Плавное изменение цвета */
 }
 
-.footer-column {
-  flex-basis: 15%;
+.footer-nav a:hover,
+.footer-social a:hover {
+  color: #007BFF; /* Цвет ссылок при наведении */
 }
 
-.footer-column h4 {
-  color: #000;
-  margin-bottom: 10px;
-}
-
-.footer-column ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.footer-column ul li a {
-  color: #666;
-  text-decoration: none;
-}
-
-.footer-column ul li a:hover {
-  text-decoration: underline;
-}
-
-.contact-info ul li {
-  color: #666;
-}
-
-.copy-right {
+.footer-text {
   text-align: center;
-  margin-top: 20px;
-  font-size: 0.75rem;
+  margin-top: 20px; /* Отступ сверху */
+}
+
+.social-link i {
+  font-size: 16px; /* Или другой размер, который вы предпочитаете */
 }
