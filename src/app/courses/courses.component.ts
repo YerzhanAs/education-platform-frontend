@@ -10,6 +10,7 @@ import { CourseDTO } from '../services/course/courseDTO';
 export class CoursesComponent implements OnInit {
   public coursesList: CourseDTO[] = [];
   public filteredCoursesList: CourseDTO[] = [];
+  searchTerm = '';
 
   constructor(private courseService: CourseService) {}
 
@@ -46,6 +47,20 @@ export class CoursesComponent implements OnInit {
   filterCoursesByLanguage(language: string): void {
     console.log('ura');
     this.filteredCoursesList = this.coursesList.filter(course => language === 'Все' ? true : course.language === language);
+  }
+
+  // tslint:disable-next-line:typedef
+  onSearchCourse(): void {
+    if (!this.searchTerm) {
+      this.filteredCoursesList = [...this.coursesList];
+    } else {
+      this.courseService.searchCourses(this.searchTerm).subscribe({
+        next: (data: CourseDTO[]) => {
+          this.filteredCoursesList = data;
+        },
+        error: (error) => this.handleError(error)
+      });
+    }
   }
 
   private handleError(error: any): void {

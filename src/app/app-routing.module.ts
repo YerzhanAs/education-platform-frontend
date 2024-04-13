@@ -11,11 +11,16 @@ import {CoursesComponent} from './courses/courses.component';
 import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AuthGuard} from './auth.guard';
+import {ContactusComponent} from './contactus/contactus.component';
 
 const routes: Routes = [
   {
     path: 'notfound',
     component: PageNotFoundComponent
+  },
+  {
+    path: 'contact',
+    component: ContactusComponent
   },
   {
     path: 'home',

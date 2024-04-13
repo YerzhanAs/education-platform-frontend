@@ -7,11 +7,12 @@
     </div>
     <ul class="nav-links">
       <li><a routerLink="home">Home</a></li>
-      <li><a href="#">About us</a></li>
+      <li><a routerLink="contact">Contact us</a></li>
       <li><a routerLink="courses">Courses</a></li>
-      <li><a href="#">Our Service</a></li>
-      <li><a href="#">Contact us</a></li>
+      <li><a href="contact">Our Service</a></li>
+      <li><a *ngIf="authority" routerLink="profile">Profile</a></li>
     </ul>
-    <button routerLink="auth/login" class="sign-in-btn">Sign in</button>
+    <button *ngIf="!authority" routerLink="auth/login" class="sign-in-btn">Sign in</button>
+    <button *ngIf="authority" class="sign-in-btn " (click)="logout()">Logout</button>
   </nav>
 </header>

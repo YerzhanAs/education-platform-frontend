@@ -31,4 +31,9 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  logout() {
+    this.tokenStorage.signOut();
+    window.location.reload();
+  }
+
 }

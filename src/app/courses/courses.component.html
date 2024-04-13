@@ -6,9 +6,9 @@
       <button class="tab-button" (click)="filterCoursesByLanguage('Казахский')">На казахском</button>
     </div>
     <div class="search-container">
-      <input type="text" class="search-input" placeholder="Поиск курсов...">
-      <button class="search-btn">
-        <i></i>
+      <input type="text" class="search-input" placeholder="Поиск курсов..." [(ngModel)]="searchTerm">
+      <button class="search-btn" (click)="onSearchCourse()">
+        <i class="fas fa-search"></i>
       </button>
     </div>
   </div>

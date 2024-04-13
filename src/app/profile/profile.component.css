@@ -1,69 +1,241 @@
-.container {
-  height: 100%;
-  background-color: #3457D5;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
 
-.profile-header {
-  text-align: center;
-}
-
-.profile-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background: #fff;
-  margin-bottom: 20px;
-}
-
-h1 {
-  color: #fff;
-  font-size: 2em;
+body{
+  font-family: 'Euclid Circular A', sans-serif;
   margin: 0;
-}
-
-.edit-button {
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 1.5em;
-  cursor: pointer;
-}
-
-.form-container {
-  width: 90%;
-  max-width: 400px;
-}
-
-.input-group {
-  margin-bottom: 20px;
-}
-
-.input-group label {
-  display: block;
-  color: #fff;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.footer {
-  position: absolute;
-  bottom: 30px;
-}
-
-.footer-button {
   background-color: #fff;
+}
+
+header nav {
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px; /* Set a max-width for the container */
+  margin: auto;
+  padding: 0 15px; /* Add some padding on the sides */
+}
+
+
+.logo img {
+  height: 40px; /* Adjust as per the actual logo size */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 60px; /* Adjust the space between the links as needed */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333; /* Adjust navbar item color as needed */
+
+}
+
+.sign-in-btn {
+  background-color: #4D2C5E;
   border: none;
+  color: white;
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-btn:hover {
+  background-color: #6841a9; /* Darken the button on hover */
+}
+
+
+.profile-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-height: 50vh; /* Minimum height to fill the viewport */
+}
+
+.back-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  color: white;
+}
+
+.profile-upper {
+  background-color: #3078F0; /* Blue background color */
+  padding-top: 100px;
+  text-align: center;
+  padding-bottom: 50px; /* Space before the white area starts */
+}
+
+.profile-avatar-container {
+  background-color: #3078F0; /* Blue background color */
+  padding: 20px; /* Padding around the avatar container */
+  display: flex;
+  justify-content: center; /* Center the avatar horizontally */
+}
+
+.profile-avatar {
+  position: relative; /* Relative position for the positioning of camera icon */
+  display: inline-block; /* To wrap the content inside the div */
+  border-radius: 50%; /* Circle shape */
+  padding: 2px; /* Space around the avatar icon, adjust as needed */
+  background: #fff; /* White background to create border effect */
+  line-height: 0; /* Remove the space around the image */
+}
+
+.profile-avatar img {
+  width: 100px; /* Adjust size as needed */
+  height: 100px; /* Adjust size as needed */
+  border-radius: 50%; /* Circle shape */
+  object-fit: cover; /* Ensure the image covers the area properly */
+}
+
+.camera-icon {
+  position: absolute; /* Absolute position relative to the profile avatar */
+  bottom: 0; /* Align to the bottom */
+  right: -10px; /* Align to the right */
+  background-color: #fff; /* White background for the camera icon */
+  border-radius: 50%; /* Circle shape */
+  padding: 10px; /* Space around the camera icon */
+  line-height: 0; /* Remove the space around the FontAwesome icon */
+  border: 2px solid #3078F0; /* Blue border to separate it from the user icon */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.camera-icon .fas.fa-camera {
+  font-size: 20px; /* Smaller icon size */
+  color: #3078F0; /* Blue icon color */
+}
+
+.fas.fa-pencil-alt{
+  cursor: pointer;
+}
+
+.back-icon{
+  cursor: pointer;
+}
+
+.profile-upper h1 {
+  color: white;
+  margin-top: 20px;
+}
+
+.edit-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: white;
+}
+
+.profile-lower {
+  background-color: white; /* White background color for the lower part */
+  padding: 20px;
+  margin-top: 40px;
+  margin-bottom: 100px;
+}
+
+.profile-info {
+  max-width: 400px;
+  margin: 0 auto; /* Center the form */
+}
+
+.profile-info label,
+.profile-info input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.profile-info input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  font-size: 16px;
+  padding: 10px 5px;
+  box-sizing: border-box;
+}
+
+.profile-info input:read-only {
+  background-color: transparent;
+}
+
+footer {
+  background-color: #F8F8F8; /* Цвет фона футера */
+  color: #333; /* Цвет текста */
+  padding: 20px 0; /* Верхний и нижний отступы */
+  font-size: 14px; /* Размер шрифта */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Отступы справа и слева */
+}
+
+.footer-nav,
+.footer-social {
+  display: flex;
+  gap: 20px; /* Отступы между ссылками */
+}
+
+.footer-nav a,
+.footer-social a {
+  color: #333; /* Цвет ссылок */
+  text-decoration: none; /* Убрать подчеркивание */
+  transition: color 0.3s; /* Плавное изменение цвета */
+}
+
+.footer-nav a:hover,
+.footer-social a:hover {
+  color: #007BFF; /* Цвет ссылок при наведении */
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 20px; /* Отступ сверху */
+}
+
+.social-link i {
+  font-size: 16px; /* Или другой размер, который вы предпочитаете */
+}
+
+
+.input-container {
+  position: relative; /* Для абсолютного позиционирования иконки внутри */
+  display: flex;
+  align-items: center; /* Выровнять иконку карандаша по центру с полем ввода */
+  border-bottom: 1px solid #ccc; /* Серая линия под инпутом */
+}
+
+.input-container input[type="password"] {
+  border: none;
+  outline: none;
+  padding: 10px 0; /* Отступ сверху и снизу внутри поля ввода */
+  margin-right: 10px; /* Отступ между полем ввода и иконкой */
+  color: rgb(169, 169, 184); /* Цвет текста для поля ввода */
+  width: 100%; /* Поле ввода занимает всю доступную ширину */
+}
+
+.edit-password {
+  position: absolute;
+  right: 0;
+  color: #666; /* Цвет иконки карандаша */
+  cursor: pointer;
+}
+
+/* Дополнительные стили для иконки при наведении */
+.edit-password:hover {
+  color: #333;
 }

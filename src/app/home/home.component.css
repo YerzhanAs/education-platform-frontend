@@ -1,396 +1,303 @@
-body {
-  font-family: "Roboto", sans-serif;
-  background-color: #fff; /* Background color for the entire body */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Euclid Circular A', sans-serif;
 }
 
 .container {
   max-width: 1200px; /* Set a max-width for the container */
-  margin: auto;
+  margin: 0 auto;
   padding: 0 15px; /* Add some padding on the sides */
 }
 
-.hero-section {
-  background-color: #FDF8EE;
-  width: 100%;
-  height: 95vh;
-  background-image: url('/assets/group357.png');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.hero-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative; /* Needed for proper z-index stacking */
-  z-index: 1; /* Ensures hero section overlaps the blocks if necessary */
+  align-items: stretch;
+  padding: 20px;
+
 }
 
-.hero-content-container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.hero-text {
-  flex-basis: 50%;
-}
-
-.hero-title {
-
-  font-size: 62px;
-  line-height: 1.2;
-  margin-bottom: 0.5em; /* Adjust spacing as needed */
-  color: #333;
-  width: 70%;
-}
-
-.search-bar {
-  display: flex;
-  align-items: center;
-  background-color: #FFF;
-  padding: 10px;
-  border-radius: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  max-width: 500px; /* Same as before, or adjust as needed */
-  width: 100%; /* Add this to make it responsive */
-}
-
-.hero-content {
-  max-width: 50%; /* Adjust width as necessary */
-}
-
-.hero-image {
-  flex-basis: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-image img {
-  max-width: 100%;
-  height: auto;
-}
-
-#search-input {
-  border: none;
-  outline: none;
-  flex-grow: 1; /* Input takes up the remaining space */
-  font-size: 1em; /* Adjust the font size as needed */
-  line-height: 1.5; /* Spacing for the input text */
-  color: #333; /* Text color */
-  margin-right: 10px; /* Space before the button */
-  border-radius: 30px; /* Rounded borders for input */
-}
-
-#search-button {
-  background-color: #4D2C5E; /* Button color */
+.text-box {
+  flex-basis: 65%; /* The text box will take up 65% of the flex container's width */
+  background: #2a83ff; /* Light blue background for text */
+  padding: 40px;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Box shadow for depth */
   color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  text-transform: uppercase; /* Uppercase button text */
-  font-weight: bold;
+  margin-right: 1%; /* Spacing between text box and image box */
+  flex-direction: column;
+  justify-content: center;
 }
 
-#search-button:hover {
-  background-color: #6841a9; /* Darken the button on hover */
-}
-
-.info-blocks-container {
-  border-radius: 20px;
-  display: flex;
-  justify-content: space-around;
-  background-color: #4D2C5E;
-  padding: 2em 0;
-  margin-top: -90px; /* Adjust this value as needed to overlap */
+.text-content {
   position: relative;
   z-index: 2;
-  width: 80%; /* Reduce the width to make the container narrower */
-  max-width: 1200px; /* Or set a max-width that fits your design */
-  left: 50%; /* Center the block */
-  transform: translateX(-50%); /* Center the block */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.info-block {
-  flex: 1; /* Each block will take equal width */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1em; /* Adjust the padding as needed */
+.content h1 {
+  font-size: 3.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+}
+
+.content p {
+  font-size: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.choose-course-btn {
+  margin-top: 70px;
+  background-color: black;
   color: white;
+  border: none;
+  padding: 20px 40px;
+  cursor: pointer;
+  border-radius: 10px; /* Rounded corners */
+  font-size: 1rem;
 }
 
-.info-icon-bg {
-  background-color: rgba(255, 255, 255, 0.2); /* White with 20% opacity */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100px; /* Adjust to fit your icon */
-  height: 100px; /* Adjust to fit your icon */
-  border-radius: 20px; /* Optional: if you want rounded corners */
-  margin-bottom: 1em; /* Space between the icon and the title */
-}
-
-.info-icon-bg img {
-  width: 50px; /* Adjust to your icon size */
-  height: 50px; /* Adjust to your icon size */
-}
-
-.info-content h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  text-align: center;
-}
-
-.info-content p {
-  font-size: 1em;
-  opacity: 60%;
-  text-align: center;
-  margin-top: 10px;
-}
-
-.tracks-section {
+.video-box {
+  flex: 1 0 35%; /* The video box will take up 35% of the flex container's width */
+  border-radius: 10px;
+  overflow: hidden; /* Ensures the video is clipped to the border-radius */
   position: relative;
-  font-family: "Jost", sans-serif;
-  padding: 2em 0;
-  background-color: #ffffff; /* Adjust if there's a specific background color */
 }
 
-.section-title {
-  text-align: center;
-  font-size: 2em; /* Adjust the font size as needed */
-}
-
-.section-subtitle {
-  text-align: center;
-  font-size: 1em;
-  color: #666666; /* Adjust the color as needed */
-  margin-bottom: 2em;
-}
-
-.tracks-container {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap; /* Allows the cards to wrap on smaller screens */
-}
-
-
-.track-card {
-  width: 300px; /* Adjust based on your design requirements */
-  margin: 10px;
-  border-radius: 16px; /* Rounded corners for the card */
-  overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  background-color: #fff;
-  transition: transform 0.3s ease;
-}
-
-.track-card:hover {
-  transform: translateY(-5px); /* Slight lift effect */
-}
-
-.track-image {
+.video-content {
   width: 100%;
-  height: auto;
-  display: block;
+  height: 100%; /* Ensures the video fills the container */
+  object-fit: cover; /* Cover the content box */
 }
 
-.track-content {
-  padding: 16px;
-}
-
-.track-title {
-  font-size: 17px;
-  color: #333;
-  margin: 8px 0;
-}
-
-.track-rating {
-  /* Style according to your star rating component */
-}
-
-.track-price {
-  color: #FF7426; /* Example price color */
-  font-size: 17px;
-  font-weight: bold;
-  margin: 8px 0;
-}
-
-.track-meta {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 0.85em;
-  color: #666;
-}
-
-.track-meta i {
-  margin-right: 4px; /* For spacing between the icon and text */
-}
-
-.decorative-element {
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-.decorative-lamp {
-  bottom: -350px; /* Примерное расположение, отрегулируйте под свои нужды */
-  left: 50px; /* Примерное расположение */
-  width: 100px; /* Задайте подходящий размер для вашего изображения */
-  height: 100px; /* Задайте подходящий размер для вашего изображения */
-  background-image: url('/assets/lamp.png'); /* Укажите правильный путь к изображению лампочки */
-}
-
-.decorative-arrow-up {
-  bottom: -350px; /* Примерное расположение */
-  right: 50px; /* Примерное расположение */
-  width: 100px; /* Задайте подходящий размер для вашего изображения */
-  height: 100px; /* Задайте подходящий размер для вашего изображения */
-  background-image: url('/assets/arrow.png'); /* Укажите правильный путь к изображению стрелки */
-}
-
-.premium-learning {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 50px 0;
-  background: #FDF8EE;
-  background-image: url('/assets/aass.png');
-  margin-bottom: 200px;
-  background-repeat: repeat-x;
-}
-
-.premium-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  position: relative; /* Добавляем относительное позиционирование */
+.courses-section {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
+  padding: 40px 15px;
+  text-align: center;
 }
 
-.premium-illustration {
-  min-width: 500px;
-  min-height: 500px;
-  background: url('/assets/Learning_Expereince.png') no-repeat center / contain;
-  position: absolute; /* Абсолютное позиционирование для свободного перемещения */
-  transform: translate(-80%, 10%); /* Центрируем элемент */
+.courses-section h2{
+  margin-bottom: 10px;
 }
 
-.premium-info {
-  flex: 1;
-  padding-left: 400px; /* Расстояние от иллюстрации до блока с текстом */
-}
-
-.premium-title {
-  font-size: 48px;
-  color: #000; /* Цвет текста, как на вашем изображении */
-  width: 70%;
+.course-categories {
+  display: flex;
+  justify-content: center;
   margin-bottom: 30px;
 }
 
-.feature {
+.category-btn {
+  background: none;
+  border: 2px solid #000;
+  padding: 10px 20px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.category-btn.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.courses-container {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.course-card {
+  width: 300px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: left;
+}
+
+.course-tag {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+.course-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.course-duration, .course-format {
+  font-size: 0.875rem;
+  margin-bottom: 10px;
+}
+
+.course-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.view-all-btn-container {
+  margin-top: 30px;
+}
+
+.view-all-btn {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.testimonials-section {
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+  padding: 40px 15px;
+
+}
+
+.testimonials-section h2{
   margin-bottom: 15px;
 }
 
-.feature-icon {
-  flex: 0 0 50px; /* Задаём размер для иконок */
-  height: 50px;
-  background: url('/assets/aaaa.png') no-repeat center / cover;
-  margin-right: 15px;
-}
-
-.feature-text h3 {
-  font-size: 24px;
-  color: #333;
-  margin: 0 0 5px 0; /* Уменьшаем расстояние между заголовком и текстом */
-}
-
-.feature-text p {
-  font-size: 16px;
-  color: #666;
-}
-
-.newsletter {
-  background-color: #4D2C5E; /* Задаем цвет фона */
-  color: white;
-  text-align: center;
-  padding: 40px;
-  border-radius: 12px; /* Добавляем округление углов */
-  width: 80%; /* Задаем ширину блока, можно изменить по предпочтениям */
-  max-width: 1000px; /* Максимальная ширина */
-  margin: 0 auto 100px; /* Выравнивание по центру и автоматические отступы по бокам */
-  position: relative; /* Позиционирование для декоративных элементов */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавляем тень для визуального "поднятия" блока */
-}
-
-/* Стили для остального содержимого и декоративных элементов остаются без изменений */
-.newsletter-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.newsletter h2 {
-  font-size: 32px;
-  margin-bottom: 10px;
-}
-
-.newsletter p {
-  margin-bottom: 30px;
-}
-
-.newsletter-form {
+.testimonial-cards-container {
   display: flex;
-  justify-content: center;
-  gap: 10px; /* Расстояние между полями */
+  justify-content: space-around;
+  gap: 20px;
 }
 
-.newsletter-form input {
-  border: none;
-  padding: 15px;
-  border-radius: 30px;
-  min-width: 250px;
+.testimonial-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  width: 300px; /* Adjust width as needed */
+  margin: auto;
 }
 
-.newsletter-form button {
-  background-color: #FF9F45; /* Оранжевый цвет кнопки */
-  color: white;
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.testimonial-image {
+  width: 50px; /* Fixed size for the image */
+  height: 50px; /* Fixed size for the image */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-image img {
+  width: auto; /* Will respect the aspect ratio */
+  height: 100%; /* Will fill the height of the container */
+  max-width: none; /* Overrides the max-width if it's set somewhere else */
+}
+
+.student-name {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.student-course {
+  margin: 0;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.testimonial-text p {
+  font-size: 0.9em;
+  line-height: 1.4;
+  color: #333;
+  margin-top: 15px;
+}
+
+.nav-button {
+  background: none;
   border: none;
-  padding: 15px 30px;
-  border-radius: 30px;
+  font-size: 2em;
   cursor: pointer;
 }
 
-/* Декоративные элементы */
-.newsletter:before,
-.newsletter:after {
-  content: '';
-  position: absolute;
-  background-repeat: no-repeat;
-  background-size: contain;
+.prev-button {
+  margin-right: 20px;
 }
 
-.newsletter:before {
-  background-image: url('/assets/group.png');
-  left: 40px;
-  bottom: 40px;
-  width: 120px;
-  height: 120px;
+.next-button {
+  margin-left: 20px;
 }
 
-.newsletter:after {
-  background-image: url('/assets/lamp.png');
-  right: 40px;
-  top: 40px;
-  width: 120px;
-  height: 120px;
+.nav-button:hover {
+  color: #0056b3;
 }
+
+.contact-section {
+  background-color: #007bff; /* Adjust the color to match your design */
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  margin: 0px auto;
+  max-width: 1000px; /* Adjust the width as per your layout */
+  margin-bottom: 80px;
+}
+
+.contact-text h2 {
+  font-size: 1.5rem; /* Adjust size as needed */
+  margin: 0;
+}
+
+.contact-form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name-input, .phone-input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-btn {
+  background-color: #000; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 0 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.name-input, .phone-input, .contact-btn {
+  height: 40px; /* or other height as per your design */
+}
+
+.name-input:focus, .phone-input:focus {
+  outline: 2px solid #0056b3; /* Blue outline to match the theme */
+}
+
+.contact-btn:hover {
+  background-color: #0056b3; /* Slightly lighter blue on hover */
+}
+
+
+
+
+
+
+

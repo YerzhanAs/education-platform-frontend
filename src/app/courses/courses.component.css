@@ -29,11 +29,10 @@ body{
   align-items: center;
 }
 .search-btn{
-
-  padding: 18.5px;
+  padding: 10px;
   border: 1px solid #CCCCCC;
   border-left: none;
-  border-radius: 0 20px 20px 0;
+  border-radius: 0 10px 20px 0;
   background-color: #FFFFFF;
   cursor: pointer;
   outline: none;
@@ -68,9 +67,9 @@ body{
 }
 
 .tab-button.active {
-  background-color: #4D2C5E; /* Цвет фона активной кнопки */
+  background-color: #000; /* Цвет фона активной кнопки */
   color: #FFFFFF; /* Цвет текста активной кнопки */
-  border-color: #4D2C5E; /* Цвет границы активной кнопки */
+  border-color: #000; /* Цвет границы активной кнопки */
 }
 
 .search-container {

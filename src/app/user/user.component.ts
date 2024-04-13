@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UserService } from '../services/user/user.service';
-import {TokenStorageService} from "../auth/token-storage.service";
 
 @Component({
   selector: 'app-user',
@@ -15,6 +14,7 @@ export class UserComponent implements OnInit {
 
   constructor(private userService: UserService) { }
 
+  // tslint:disable-next-line:typedef
   ngOnInit() {
     this.userService.getUserBoard().subscribe(
       data => {

@@ -1,18 +1,31 @@
-<div class="container" *ngIf="info?.token; else loggedOut">
-  <div class="profile-header">
-    <img src="profile.png" alt="Profile Picture" class="profile-image">
-    <h1>{{info.username}}</h1>
-    <button class="edit-button">✎</button>
+<div class="profile-container">
+  <div class="back-icon" >
+    <i class="fas fa-arrow-left"></i>
   </div>
-  <div class="form-container">
-    <div class="input-group">
-      <strong>Username: </strong> {{info.username}} <br/>
-      <strong>Roles:</strong> {{info.roles}} <br/>
-      <strong>Token:</strong> {{info.token}} <br/>
+
+  <div class="profile-upper">
+    <div class="profile-avatar-container">
+      <div class="profile-avatar">
+        <img src="assets/default.png" alt="Profile Avatar">
+        <div class="camera-icon" >
+          <i class="fas fa-camera"></i>
+        </div>
+      </div>
+    </div>
+    <h1>{{ info.name }}</h1>
+    <div class="edit-icon" >
+      <i class="fas fa-pencil-alt"></i>
+    </div>
+  </div>
+
+  <div class="profile-lower">
+    <div class="profile-info">
+      <label for="email">Email</label>
+      <input type="email" id="email" [(ngModel)]="info.username" readonly>
+      <div class="input-container">
+        <input type="password" id="password" [value]="info.password" readonly>
+<!--        <i class="fas fa-pencil-alt edit-password" (click)="togglePasswordEdit()"></i>-->
+      </div>
     </div>
   </div>
 </div>
-
-<ng-template #loggedOut>
-  Please login.
-</ng-template>
