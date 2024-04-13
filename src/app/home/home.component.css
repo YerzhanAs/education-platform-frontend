@@ -284,7 +284,7 @@
 }
 
 .name-input, .phone-input, .contact-btn {
-  height: 40px; /* or other height as per your design */
+  height: 50px; /* or other height as per your design */
 }
 
 .name-input:focus, .phone-input:focus {
