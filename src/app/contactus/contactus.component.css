@@ -1,6 +1,11 @@
-.contact-container {
+.container {
   max-width: 1000px;
   margin: auto;
+
+}
+
+.contacts{
+  margin: 20px 0;
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 30px;
