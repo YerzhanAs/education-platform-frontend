@@ -32,15 +32,16 @@ header nav {
 }
 
 .sign-in-btn {
-  background-color: #000;
-  border: none;
-  color: white;
-  padding: 5px 15px;
+  background-color: #fff  ;
+  color: #000;
+  border: 1px solid black; /* This will add the black border */
+  padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .sign-in-btn:hover {
-  background-color: #000; /* Darken the button on hover */
+  background-color: #2a83ff; /* Darken the button on hover */
+  color: #fff;
 }
