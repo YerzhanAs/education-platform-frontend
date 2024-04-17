@@ -10,6 +10,7 @@ export class NavbarComponent implements OnInit {
 
   roles: string[];
   authority: string;
+  dropdownOpen = false;
 
   constructor(private tokenStorage: TokenStorageService) { }
 
@@ -29,6 +30,10 @@ export class NavbarComponent implements OnInit {
         return true;
       });
     }
+  }
+
+  toggleDropdown(): void {
+    this.dropdownOpen = !this.dropdownOpen;
   }
 
   logout() {
