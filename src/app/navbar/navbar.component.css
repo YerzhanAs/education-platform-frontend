@@ -45,3 +45,84 @@ header nav {
   background-color: #2a83ff; /* Darken the button on hover */
   color: #fff;
 }
+
+.user-profile {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 0.5rem; /* This is for rounded-lg */
+  overflow: hidden;
+}
+
+.user-name {
+  flex-grow: 1;
+  padding: 1rem; /* This is for p-4 */
+}
+
+.user-name {
+  font-size: 1rem; /* This is for text-md */
+  color: #718096; /* This is a gray-600 equivalent */
+}
+
+.user-image {
+  padding: 1rem; /* This is for p-4 */
+}
+
+.user-image img {
+  width: 3rem; /* This is for w-12 */
+  height: 3rem; /* This is for h-12 */
+  object-fit: cover;
+  border-radius: 9999px; /* This is for rounded-full */
+  background-color: #edf2f7; /* This is for bg-gray-200 */
+}
+
+.auth-and-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.auth-and-profile a{
+  text-decoration-color: #000000;
+}
+
+.auth-and-profile {
+  /* ... other styles ... */
+  position: relative;
+}
+
+.dropdown-content {
+  display: block; /* Hidden by default */
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  border-radius: 6px;
+  z-index: 1;
+  /* Adjust the top and right values as needed to position the dropdown */
+  top: 100%;
+  right: 40%;
+
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px 15px;
+  text-decoration: none;
+  display: block;
+  border-bottom: 1px solid #eaeaea; /* Separator for the links */
+}
+
+/* Toggle the display of the dropdown menu based on the .open class */
+.auth-and-profile.open .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #e2e8f0; /* Light gray background on hover */
+  color: #1a202c; /* Optionally make text darker as well */
+}
+
+

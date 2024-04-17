@@ -9,10 +9,30 @@
       <li><a routerLink="home">Home</a></li>
       <li><a routerLink="contact">Contact us</a></li>
       <li><a routerLink="courses">Courses</a></li>
-      <li><a href="contact">News & Events</a></li>
-      <li><a *ngIf="authority" routerLink="profile">Profile</a></li>
+      <li><a routerLink="contact">News & Events</a></li>
+
+<!--      <li><a *ngIf="authority" routerLink="profile"></a></li>-->
     </ul>
-    <button *ngIf="!authority" routerLink="auth/login" class="sign-in-btn">Sign in</button>
-    <button *ngIf="authority" class="sign-in-btn " (click)="logout()">Logout</button>
+    <div class="auth-and-profile"  [class.open]="dropdownOpen" (click)="toggleDropdown()">
+      <a *ngIf="authority">
+        <div class="user-profile">
+          <div class="user-name">
+            <div>Ержан</div>
+            <div>Ашимов</div>
+          </div>
+          <div class="user-image">
+            <img src="assets/user-default-img.png" alt="User image">
+          </div>
+        </div>
+      </a>
+      <div class="dropdown-content" *ngIf="dropdownOpen">
+        <a routerLink="/my-courses">Мои курсы</a>
+        <a routerLink="profile">Профиль</a>
+        <a routerLink="/my-purchases">Мои покупки</a>
+      </div>
+      <button *ngIf="!authority" routerLink="auth/login" class="sign-in-btn">Sign in</button>
+      <button *ngIf="authority" class="sign-in-btn " (click)="logout()">Logout</button>
+    </div>
+
   </nav>
 </header>
