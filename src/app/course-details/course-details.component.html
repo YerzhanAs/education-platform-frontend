@@ -1,0 +1,82 @@
+<div class="header">
+  <div class="container">
+    <div class="header-content" *ngIf="course$ | async as course">
+      <div class="header-text">
+        <h1 class="course-title">{{ course.name }}</h1>
+        <div class="tags">
+          <span class="tag">Blockchain</span>
+        </div>
+        <div class="course-details">
+          <span class="detail level">{{ course.level }}</span>
+          <span class="detail language">{{ course.language }}</span>
+          <span class="detail duration">{{ course.durationInMonths }} месяц(ев)</span>
+        </div>
+        <div class="author"><p>Provided by Yerzhan</p></div>
+      </div>
+      <div class="empty-space">
+        <div class="course-card">
+          <img class="card-image" src="{{ 'assets/default-course.jpg' }}" alt="Course Presenter">
+          <div class="card-info">
+            <div class="card-price">150000</div>
+            <div class="info">
+              <p>{{ course.level }}</p>
+              <p>{{ course.language }}</p>
+            </div>
+            <div class="course-includes">
+              <span>Этот курс включает</span>
+              <div class="includes-item">10 видео</div>
+            </div>
+            <div class="buy-btn">
+              <button class="buy-button">Купить за 15000 Т</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="course-description">
+    <div class="learning-objectives">
+      <h2>Чему вы научитесь?</h2>
+      <div class="columns">
+        <!-- Populate this based on course content if available -->
+        <ul>
+          <li>Aspect 1 of what you will learn</li>
+          <li>Aspect 2 of what you will learn</li>
+        </ul>
+        <ul>
+          <li>Aspect 3 of what you will learn</li>
+          <li>Aspect 4 of what you will learn</li>
+        </ul>
+      </div>
+    </div>
+    <div class="detailed-info">
+      <h4>Описание</h4>
+      <p>Пошаговая инструкция по действиям в случае импорта из стран ЕАЭС, а также из третьих стран мира. Подробный план при экспорте товара в рамках ЕАЭС и третьих стран мира Что вы узнаете на курсе? Пошаговая инструкция по действиям в случае импорта из стран ЕАЭС, а также из третьих стран мира. Подробный план при экспорте товара в рамках ЕАЭС и третьих стран мира Оформление CHT на импорт, составление CHT и 328.00.
+        Узнаете какие налоговые обязательства возникают при импорте?
+        Что такое грузовая таможенная декларация и где ее взять? Какую отчетность необходимо сдавать? И многое другое</p>
+    </div>
+    <div class="lesson-plan">
+      <div class="lesson-plan-header">
+        <h2>План обучения</h2>
+        <p> 10 секций • 15 videosCount видео</p>
+      </div>
+      <ul class="lesson-list">
+        <div class="lesson-item">
+          <div class="lesson-arrow"></div>
+          <span class="lesson-title">Урок 1</span>
+        </div>
+        <div class="lesson-item">
+          <div class="lesson-arrow"></div>
+          <span class="lesson-title">Урок 2</span>
+        </div>
+        <div class="lesson-item">
+          <div class="lesson-arrow"></div>
+          <span class="lesson-title">Урок 3</span>
+        </div>
+
+      </ul>
+    </div>
+  </div>
+</div>

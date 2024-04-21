@@ -19,6 +19,7 @@ import { HomeComponent } from './home/home.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactusComponent } from './contactus/contactus.component';
+import { CourseDetailsComponent } from './course-details/course-details.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { ContactusComponent } from './contactus/contactus.component';
     HomeComponent,
     FooterComponent,
     PageNotFoundComponent,
-    ContactusComponent
+    ContactusComponent,
+    CourseDetailsComponent
   ],
   imports: [
     BrowserModule,

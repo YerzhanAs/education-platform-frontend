@@ -12,6 +12,9 @@ import {HomeComponent} from './home/home.component';
 import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AuthGuard} from './auth.guard';
 import {ContactusComponent} from './contactus/contactus.component';
+import {CourseDetailsComponent} from './course-details/course-details.component';
+
+
 
 const routes: Routes = [
   {
@@ -25,6 +28,14 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'course-details/:id',
+    component: CourseDetailsComponent
+  },
+  {
+    path: 'course-details',
+    component: CourseDetailsComponent
   },
   {
     path: 'profile',

@@ -1,0 +1,321 @@
+.header {
+  background: linear-gradient(159.52deg, rgb(96, 171, 243) 8.93%, rgb(74, 119, 245) 50.34%, rgb(59, 91, 246) 82.55%);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 60px 0px;
+  color: #fff;
+}
+
+.header-text {
+  width: 60%;
+}
+
+
+
+.back-link {
+  color: rgba(255, 255, 255, 0.75);
+  text-decoration: none;
+  display: block; /* or inline-block, depending on your design */
+  margin-bottom: 1rem;
+}
+
+.course-title {
+  font-weight: 600;
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.tags {
+  width: 60%;
+  margin-bottom: 20px;
+
+}
+
+.tag {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  margin-right: 5px;
+  padding: 5px 15px;
+  border-radius: 5px; /* Small rounded corners for tags */
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.course-details {
+  margin-bottom: 20px;
+
+}
+
+.detail {
+  display: inline-block;
+  margin-right: 20px; /* Space between details */
+  font-size: 14px;
+}
+
+.level:before,
+.language:before,
+.duration:before {
+  font-family: "Font Awesome 5 Free"; /* Assuming you're using Font Awesome */
+  margin-right: 5px;
+}
+
+.level:before {
+  content: "\f0b1"; /* FontAwesome icon unicode */
+}
+
+.language:before {
+  content: "\f1ab"; /* FontAwesome icon unicode */
+}
+
+.duration:before {
+  content: "\f017"; /* FontAwesome icon unicode */
+}
+
+.author p{
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.empty-space {
+  width: 30%;
+  position: relative;
+}
+
+.course-card {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 350px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  transform: translateY(-20%);
+}
+
+.card-image {
+  width: 100%;
+  display: block;
+}
+
+.card-info {
+  padding: 20px;
+  color: #000;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.card-description {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.author {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.card-price {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.language, .level {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.course-includes {
+  margin: 20px 0;
+  font-size: 14px;
+}
+
+.includes-item {
+  display: block; /* Make each item display on a new line */
+  margin-top: 5px;
+}
+
+.course-card .info p{
+  background: #f2f2f2;
+  border-radius: 20px;
+  display: inline-block;
+  font-size: 14px;
+  margin: 5px 5px 5px 0;
+  padding: 5px 15px;
+}
+
+.buy-container{
+  align-items: center;
+  text-align: center;
+  display: flex;
+
+}
+
+.buy-btn{
+  align-items: center;
+  text-align: center;
+}
+
+.buy-btn button{
+  background-color: transparent; /* No fill color, only border */
+  color: #2a83ff; /* Button text color */
+  border: 2px solid #2a83ff; /* Blue border color */
+  border-radius: 25px; /* Rounded corners */
+  padding: 10px 25px; /* Padding inside the button */
+  font-size: 16px; /* Font size of the text */
+  font-weight: bold; /* Font weight of the text */
+  cursor: pointer; /* Cursor to indicate the button is clickable */
+  outline: none; /* Remove default focus outline */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  text-transform: uppercase; /* Uppercase text */
+}
+
+.buy-button:hover {
+  background-color: #2a83ff; /* Blue background on hover */
+  color: white; /* White text on hover */
+}
+
+.course-description{
+  width: 70%; /* Same as the header's text block */
+  color: #333; /* Text color */
+  font-family: 'Arial', sans-serif; /* Font family */
+}
+
+.learning-objectives {
+  max-width: 800px; /* Adjust as needed */
+  margin: 0 auto; /* Center the block */
+  margin-top: 25px;
+}
+
+.learning-objectives h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.learning-objectives .columns {
+  display: flex;
+  justify-content: space-between;
+}
+
+.learning-objectives ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 49%; /* Each column takes up roughly half the container width */
+}
+
+.learning-objectives li {
+  margin-bottom: 10px; /* Spacing between bullet points */
+  position: relative;
+  padding-left: 20px; /* Space for custom bullet */
+}
+
+.learning-objectives li::before {
+  content: '•'; /* Custom bullet symbol */
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #333; /* Bullet color */
+  font-size: 20px; /* Bullet size */
+}
+
+.detailed-info{
+  padding-top: 20px;
+  max-width: 800px; /* Adjust as needed */
+
+  font-family: 'Arial', sans-serif; /* Use your font */
+}
+
+.detailed-info h3, .detailed-info h4{
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.detailed-info p{
+  font-family: Euclid, sans-serif, Roboto, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin-bottom: 20px;
+  color: rgb(109, 110, 133);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.detailed-info button{
+  background-color: #007bff; /* Use your brand blue color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px; /* Adjust as needed */
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+.lesson-plan {
+
+  font-family: 'Arial', sans-serif; /* Replace with your font choice */
+}
+
+.lesson-plan-header h2 {
+  margin: 0;
+  font-size: 24px; /* Adjust the size as needed */
+  color: #333; /* Replace with your text color */
+}
+
+.lesson-plan-header p {
+  font-size: 16px;
+  color: #666; /* Replace with your text color */
+}
+
+.lesson-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.lesson-item {
+  background-color: #fff; /* White background */
+  border: 1px solid #e0e0e0; /* Light grey border */
+  padding: 10px;
+  margin-bottom: 10px; /* Space between items */
+  display: flex;
+  align-items: center;
+  cursor: pointer; /* If the item is clickable */
+}
+
+.lesson-arrow {
+  width: 7px;
+  height: 12px;
+  padding: 5px;
+  margin-right: 12px;
+  background-image: url('/assets/arrow.svg');
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  transition: all 500ms ease-in-out 0s;
+  transform: rotate(0deg);
+}
+
+.lesson-title {
+  color: #333; /* Dark text for the title */
+}
+
