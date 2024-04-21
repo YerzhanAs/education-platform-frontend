@@ -36,7 +36,6 @@
         <input type="password" id="password" name="password" [(ngModel)]="form.password" #password="ngModel" required minlength="6">
         <div *ngIf="f.submitted && password.invalid">
           <div *ngIf="password.errors?.required">Password is required</div>
-          <div *ngIf="password.errors?.minlength">Password must be at least 6 characters</div>
         </div>
 
         <button class="submit-btn" type="submit">Login</button>

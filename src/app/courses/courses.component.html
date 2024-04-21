@@ -1,9 +1,15 @@
 <div class="container">
   <div class="controls">
     <div class="buttons-container">
-      <button class="tab-button active" (click)="filterCoursesByLanguage('Все')">Все курсы</button>
-      <button class="tab-button" (click)="filterCoursesByLanguage('Русский')">На русском</button>
-      <button class="tab-button" (click)="filterCoursesByLanguage('Казахский')">На казахском</button>
+      <button class="tab-button"
+              [class.active]="activeLanguage === 'Все'"
+              (click)="filterCoursesByLanguage('Все')">Все курсы</button>
+      <button class="tab-button"
+              [class.active]="activeLanguage === 'Русский'"
+              (click)="filterCoursesByLanguage('Русский')">На русском</button>
+      <button class="tab-button"
+              [class.active]="activeLanguage === 'Казахский'"
+              (click)="filterCoursesByLanguage('Казахский')">На казахском</button>
     </div>
     <div class="search-container">
       <input type="text" class="search-input" placeholder="Поиск курсов..." [(ngModel)]="searchTerm">

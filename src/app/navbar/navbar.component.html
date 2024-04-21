@@ -5,13 +5,12 @@
         <img src="assets/logo.png" alt="BlockHub Logo">
       </a>
     </div>
-    <ul class="nav-links">
+    <ul class="nav-links" *ngIf="!authority">
       <li><a routerLink="home">Home</a></li>
       <li><a routerLink="contact">Contact us</a></li>
       <li><a routerLink="courses">Courses</a></li>
       <li><a routerLink="contact">News & Events</a></li>
 
-<!--      <li><a *ngIf="authority" routerLink="profile"></a></li>-->
     </ul>
     <div class="auth-and-profile"  [class.open]="dropdownOpen" (click)="toggleDropdown()">
       <a *ngIf="authority">
@@ -25,13 +24,16 @@
           </div>
         </div>
       </a>
-      <div class="dropdown-content" *ngIf="dropdownOpen">
+      <div class="dropdown-content" *ngIf="dropdownOpen && authority">
         <a routerLink="/my-courses">Мои курсы</a>
         <a routerLink="profile">Профиль</a>
+        <a routerLink="/my-purchases">Новости</a>
+        <a routerLink="/my-purchases">Игра</a>
         <a routerLink="/my-purchases">Мои покупки</a>
+        <a routerLink="/courses">Все курсы</a>
+        <a routerLink="/my-purchases" (click)="logout()">Logout</a>
       </div>
       <button *ngIf="!authority" routerLink="auth/login" class="sign-in-btn">Sign in</button>
-      <button *ngIf="authority" class="sign-in-btn " (click)="logout()">Logout</button>
     </div>
 
   </nav>
