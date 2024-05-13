@@ -4,7 +4,7 @@
       <div class="content">
         <h1>Будущее в ваших руках</h1>
         <p>Освоите Blockchain за короткий срок вместе с BlockHub</p>
-        <button class="choose-course-btn" routerLink="/courses">Выбрать курс</button>
+        <button class="choose-course-btn" routerLink="/courses" >Выбрать курс</button>
       </div>
     </div>
     <div class="video-box">
@@ -107,10 +107,12 @@
     <div class="contact-text">
       <h2>Если у вас остались вопросы — мы поможем</h2>
     </div>
+    <form (ngSubmit)="contactUs()" #f="ngForm" novalidate>
     <div class="contact-form">
-      <input type="text" placeholder="Ваше имя" class="name-input">
-      <input type="text" placeholder="+7 (999) 999-99-99" class="phone-input">
+      <input type="text" id="firstName" name="firstName" placeholder="Ваше имя" [(ngModel)]="form.firstName" class="name-input">
+      <input type="tel" id="phone" name="phone" placeholder="+7 (999) 999-99-99" [(ngModel)]="form.phones" class="phone-input">
       <button type="submit" class="contact-btn">Свяжитесь со мной</button>
     </div>
+    </form>
   </div>
 </div>

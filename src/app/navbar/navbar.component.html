@@ -16,8 +16,7 @@
       <a *ngIf="authority">
         <div class="user-profile">
           <div class="user-name">
-            <div>Ержан</div>
-            <div>Ашимов</div>
+            <div>{{ name}}</div>
           </div>
           <div class="user-image">
             <img src="assets/user-default-img.png" alt="User image">
@@ -25,11 +24,10 @@
         </div>
       </a>
       <div class="dropdown-content" *ngIf="dropdownOpen && authority">
-        <a routerLink="/my-courses">Мои курсы</a>
+        <a routerLink="/myCourse">Мои курсы</a>
         <a routerLink="profile">Профиль</a>
         <a routerLink="/my-purchases">Новости</a>
         <a routerLink="/my-purchases">Игра</a>
-        <a routerLink="/my-purchases">Мои покупки</a>
         <a routerLink="/courses">Все курсы</a>
         <a routerLink="/my-purchases" (click)="logout()">Logout</a>
       </div>

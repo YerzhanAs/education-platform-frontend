@@ -9,7 +9,7 @@
       <div class="image-text">
         Welcome to BlockHub Learning Platform
       </div>
-      <img src="assets/login.png" alt="Signup Image">
+      <img src="assets/login3.png" alt="Signup Image">
     </div>
     <div class="form-container">
       <div class="items-center">
@@ -22,21 +22,28 @@
       <form (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
         <label for="username">Username</label>
         <input type="text" id="username" name="username" [(ngModel)]="form.username" #username="ngModel" required>
-        <div *ngIf="f.submitted && username.invalid">
-          <div *ngIf="username.errors?.required">Username is required</div>
-        </div>
+<!--        <div *ngIf="f.submitted && username.invalid">-->
+<!--          <div *ngIf="username.errors?.required" class="danger">Username is required</div>-->
+<!--        </div>-->
 
         <label for="email">Email</label>
         <input type="text" id="email" name="email" [(ngModel)]="form.email" #email="ngModel" required>
-        <div *ngIf="f.submitted && email.invalid">
-          <div *ngIf="email.errors?.required">Email is required</div>
-        </div>
+<!--        <div *ngIf="f.submitted && email.invalid">-->
+<!--          <div *ngIf="email.errors?.required" class="danger">Email is required</div>-->
+<!--        </div>-->
 
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" [(ngModel)]="form.password" #password="ngModel" required minlength="6">
-        <div *ngIf="f.submitted && password.invalid">
-          <div *ngIf="password.errors?.required">Password is required</div>
-        </div>
+        <div class="input-group">
+          <input type="{{ showPassword ? 'text' : 'password' }}" id="password" name="password" [(ngModel)]="form.password" #password="ngModel" required minlength="6" class="form-control">
+          <div class="input-group-append">
+            <button class="btn btn-outline-secondary" type="button" (click)="togglePasswordVisibility()">
+              <i class="fa" [ngClass]="{ 'fa-eye': !showPassword, 'fa-eye-slash': showPassword }"></i>
+            </button>
+          </div>
+        </div>W
+<!--        <div *ngIf="f.submitted && password.invalid">-->
+<!--          <div *ngIf="password.errors?.required" class="danger">Password is required</div>-->
+<!--        </div>-->
 
         <button class="submit-btn" type="submit">Login</button>
         <div *ngIf="f.submitted && isSignUpFailed" class="alert alert-danger">

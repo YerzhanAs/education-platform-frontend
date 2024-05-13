@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="my-courses">
+    <h1 class="title">Мои Курсы</h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="course-list">
+    <div class="course-card" *ngFor="let course of coursesList">
+      <div class="card-header">
+        <h2 class="course-title">{{ course.name }}</h2>
+      </div>
+      <div class="course-progress">
+        <span class="progress-text">62 из 64 уроков</span>
+        <progress value="62" max="64"></progress>
+      </div>
+      <div class="course-actions">
+        <button class="btn continue">Продолжить</button>
+        <button class="btn info">Информация о курсе</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+

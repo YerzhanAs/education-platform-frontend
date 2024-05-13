@@ -13,10 +13,16 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AuthGuard} from './auth.guard';
 import {ContactusComponent} from './contactus/contactus.component';
 import {CourseDetailsComponent} from './course-details/course-details.component';
+import {MyCourseComponent} from './my-course/my-course.component';
 
 
 
 const routes: Routes = [
+  {
+    path: 'myCourse',
+    component: MyCourseComponent,
+    canActivate: [AuthGuard]
+  },
   {
     path: 'notfound',
     component: PageNotFoundComponent

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
-import { AuthService } from '../auth/auth.service';
-import { SignUpInfo } from '../auth/signup-info';
+import { AuthService } from '../services/auth/auth.service';
+import { SignUpInfo } from '../services/token/signup-info';
 import {Router} from '@angular/router';
+import {ToastrService} from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -15,10 +16,15 @@ export class RegisterComponent implements OnInit {
   isSignedUp = false;
   isSignUpFailed = false;
   errorMessage = '';
+  showPassword = false;
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private toastr: ToastrService) { }
 
   ngOnInit() { }
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+  }
 
   onSubmit() {
     console.log(this.form);
@@ -34,10 +40,10 @@ export class RegisterComponent implements OnInit {
         this.isSignedUp = true;
         this.isSignUpFailed = false;
         this.router.navigate(['/auth/login']);
-        console.log(data);
+        this.toastr.success(`Вы успешно прошли регистрацию:`, 'Регистрация успешна');
       },
       error => {
-        console.log(error);
+        this.toastr.error(`Ошибка регистрации: ${error.message || 'Неизвестная ошибка'}`, 'Ошибка');
         this.errorMessage = error.error.message;
         this.isSignUpFailed = true;
       }

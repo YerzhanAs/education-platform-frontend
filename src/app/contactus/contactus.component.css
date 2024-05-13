@@ -1,7 +1,6 @@
 .container {
   max-width: 1000px;
   margin: auto;
-
 }
 
 .contacts{
@@ -15,7 +14,7 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 .contact-info {
-  background-color: #6d6a97;
+  background-color: #2a83ff;
   color: #fff;
   padding: 40px;
   border-radius: 10px;
