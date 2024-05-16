@@ -11,6 +11,7 @@ export class CoursesComponent implements OnInit {
   public coursesList: CourseDTO[] = [];
   public filteredCoursesList: CourseDTO[] = [];
   searchTerm = '';
+  activeLanguage = 'Все';
 
   constructor(private courseService: CourseService) {}
 
@@ -30,22 +31,8 @@ export class CoursesComponent implements OnInit {
       }
     );
   }
-
-  enrollUser(id: number): void {
-    this.courseService.enrollUserInCourse(id)
-      .subscribe(
-        response => {
-          alert(`Enrollment successful: ${response}`);
-        },
-        error => {
-          console.error('Enrollment failed:', error);
-          alert(`Enrollment failed: ${error.message || 'Unknown error'}`);
-        }
-      );
-  }
-
   filterCoursesByLanguage(language: string): void {
-    console.log('ura');
+    this.activeLanguage = language;
     this.filteredCoursesList = this.coursesList.filter(course => language === 'Все' ? true : course.language === language);
   }
 

@@ -1,5 +1,3 @@
-/* login.component.css */
-
 .main-section{
   height: 95vh;
   background-position: center;
@@ -30,15 +28,15 @@ p {
 
 .fancy-text::before {
   left: 50px;
-  background-color: #9C4DF4;
-  background: linear-gradient(to left, #9C4DF4, transparent);
+  background-color: #2a83ff;
+  background: linear-gradient(to left, #2a83ff, transparent);
   transform-origin: left;
   transform: scaleX(0.5);
 }
 
 .fancy-text::after {
   right: 50px;
-  background: linear-gradient(to right, #9C4DF4, transparent);
+  background: linear-gradient(to right, #2a83ff, transparent);
   transform-origin: right;
   transform: scaleX(0.5);
 }
@@ -115,7 +113,7 @@ button {
 }
 
 .submit-btn {
-  background-color: #9C4DF4;
+  background-color: #2a83ff;
   color: #fff;
   font-weight: 500;
 }
@@ -132,7 +130,7 @@ input[type="checkbox"]:checked {
 
 a {
   text-decoration: none;
-  color: #9C4DF4;
+  color: #2a83ff;
   font-weight: 500;
 }
 

@@ -4,7 +4,7 @@
       <div class="content">
         <h1>Будущее в ваших руках</h1>
         <p>Освоите Blockchain за короткий срок вместе с BlockHub</p>
-        <button class="choose-course-btn" routerLink="home">Выбрать курс</button>
+        <button class="choose-course-btn" routerLink="/courses" >Выбрать курс</button>
       </div>
     </div>
     <div class="video-box">
@@ -20,44 +20,35 @@
   <div class="courses-section">
     <h2>Наши курсы</h2>
     <div class="course-categories">
-      <button class="category-btn active">С нуля</button>
-      <button class="category-btn">Средний</button>
-      <button class="category-btn">Продвинутый</button>
+      <button class="category-btn"
+              [class.active]="activeCategory === 'С нуля'"
+              (click)="filterCoursesByCategory('С нуля')">С нуля</button>
+      <button class="category-btn"
+              [class.active]="activeCategory === 'Начинающий'"
+              (click)="filterCoursesByCategory('Для начинающих')">Начинающий</button>
+      <button class="category-btn"
+              [class.active]="activeCategory === 'Продвинутый'"
+              (click)="filterCoursesByCategory('Для продвинутых')">Продвинутый</button>
     </div>
     <div class="courses-container">
-      <div class="course-card">
-        <div class="course-tag">Продвинутый</div>
-        <h3 class="course-title">Project Management</h3>
-        <div class="course-duration">2 месяца с нуля</div>
-        <div class="course-format">гибридный формат обучения</div>
-        <div class="course-image">
-          <img src="assets/course1.jpg" alt="Project Management">
+      <ng-container *ngIf="filteredCourses$ | async as courses">
+        <div *ngFor="let course of courses | slice:0:3" class="course-card">
+          <div class="course-tag">{{ course.level }}</div>
+          <h3 class="course-title">{{ course.name }}</h3>
+          <div class="course-duration">{{ course.durationInMonths }}</div>
+          <div class="course-format">Online</div>
+          <div class="course-image">
+            <img src="assets/course1.jpg" alt="Project Management">
+          </div>
         </div>
-      </div>
-      <div class="course-card">
-        <div class="course-tag">С нуля</div>
-        <h3 class="course-title">Project Management</h3>
-        <div class="course-duration">2 месяца с нуля</div>
-        <div class="course-format">гибридный формат обучения</div>
-        <div class="course-image">
-          <img src="assets/course1.jpg" alt="Project Management">
-        </div>
-      </div>
-      <div class="course-card">
-        <div class="course-tag">Продвинутый</div>
-        <h3 class="course-title">Project Management</h3>
-        <div class="course-duration">2 месяца с нуля</div>
-        <div class="course-format">гибридный формат обучения</div>
-        <div class="course-image">
-          <img src="assets/course1.jpg" alt="Project Management">
-        </div>
-      </div>
+      </ng-container>
     </div>
     <div class="view-all-btn-container">
-      <button class="view-all-btn">Посмотреть все курсы</button>
+      <button class="view-all-btn" routerLink="/courses">Посмотреть все курсы</button>
     </div>
   </div>
 </div>
+
 
 <div class="container">
   <div class="testimonials-section">
@@ -116,10 +107,12 @@
     <div class="contact-text">
       <h2>Если у вас остались вопросы — мы поможем</h2>
     </div>
+    <form (ngSubmit)="contactUs()" #f="ngForm" novalidate>
     <div class="contact-form">
-      <input type="text" placeholder="Ваше имя" class="name-input">
-      <input type="text" placeholder="+7 (999) 999-99-99" class="phone-input">
+      <input type="text" id="firstName" name="firstName" placeholder="Ваше имя" [(ngModel)]="form.firstName" class="name-input">
+      <input type="tel" id="phone" name="phone" placeholder="+7 (999) 999-99-99" [(ngModel)]="form.phones" class="phone-input">
       <button type="submit" class="contact-btn">Свяжитесь со мной</button>
     </div>
+    </form>
   </div>
 </div>

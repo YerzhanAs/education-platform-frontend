@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" >
   <div class="contacts">
     <div class="contact-info">
       <h2>Контактная информация</h2>
@@ -14,29 +14,31 @@
     <div class="contact-form">
       <h2>Связаться с нами</h2>
       <p>У вас есть вопросы или замечания? Просто напишите нам сообщение!</p>
-      <div class="form-field">
-        <label for="first-name">Имя</label>
-        <input type="text" id="first-name" placeholder="Ержан">
-      </div>
-      <div class="form-field">
-        <label for="last-name">Фамилия</label>
-        <input type="text" id="last-name" placeholder="Ашимов">
-      </div>
-      <div class="form-field">
-        <label for="email">Почта</label>
-        <input type="email" id="email" placeholder="test@example.com">
-      </div>
-      <div class="form-field">
-        <label for="phone">Номер Телефона</label>
-        <input type="tel" id="phone" placeholder="+77XX XXX XXXX">
-      </div>
-      <div class="form-field">
-        <label for="message">Сообщение</label>
-        <textarea id="message" placeholder="Ваше сообщение"></textarea>
-      </div>
-      <div class="button-container">
-        <button type="submit">Send Message</button>
-      </div>
+      <form (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+        <div class="form-field">
+          <label for="firstName">Имя</label>
+          <input type="text" id="firstName" [(ngModel)]="form.firstName" name="firstName" required>
+        </div>
+        <div class="form-field">
+          <label for="lastName">Фамилия</label>
+          <input type="text" id="lastName" [(ngModel)]="form.lastName" name="lastName" required>
+        </div>
+        <div class="form-field">
+          <label for="email">Почта</label>
+          <input type="email" id="email" [(ngModel)]="form.email" name="email" required>
+        </div>
+        <div class="form-field">
+          <label for="phone">Номер Телефона</label>
+          <input type="tel" id="phone" [(ngModel)]="form.phones" name="phone">
+        </div>
+        <div class="form-field">
+          <label for="message">Сообщение</label>
+          <textarea id="message" [(ngModel)]="form.message" name="message"></textarea>
+        </div>
+        <div class="button-container">
+          <button type="submit">Send Message</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

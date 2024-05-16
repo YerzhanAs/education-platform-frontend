@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
-import { TokenStorageService } from './auth/token-storage.service'; // Убедитесь, что путь к сервису указан верно
+import { TokenStorageService } from './services/token/token-storage.service'; // Убедитесь, что путь к сервису указан верно
 
 @Injectable({
   providedIn: 'root',

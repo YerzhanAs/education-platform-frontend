@@ -51,25 +51,23 @@ body{
 
 
 .tab-button {
-  background-color: #FFFFFF; /* Фоновый цвет для неактивного состояния */
-  border: 1px solid #f4f4f4; /* Граница для кнопок */
-  border-radius: 20px; /* Закругление углов */
-  color: #333333; /* Цвет текста для неактивного состояния */
-  cursor: pointer; /* Курсор в виде указателя */
-  font-size: 14px; /* Размер шрифта */
-  margin: 0 5px; /* Отступы между кнопками */
-  padding: 10px 20px; /* Внутренние отступы */
-  outline: none; /* Убрать стандартный outline при фокусе */
+  background-color: #FFFFFF;
+  border: 1px solid #f4f4f4;
+  border-radius: 20px;
+  color: #333333;
+  cursor: pointer;
+  font-size: 14px;
+  margin: 0 5px;
+  padding: 10px 20px;
+  outline: none;
 }
-
 .tab-button:hover {
-  background-color: #F0F0F0; /* Цвет фона для состояния наведения */
+  background-color: #F0F0F0;
 }
-
 .tab-button.active {
-  background-color: #000; /* Цвет фона активной кнопки */
-  color: #FFFFFF; /* Цвет текста активной кнопки */
-  border-color: #000; /* Цвет границы активной кнопки */
+  background-color: #000;
+  color: #FFFFFF;
+  border-color: #000;
 }
 
 .search-container {

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { TokenStorageService } from '../../auth/token-storage.service';
+import { TokenStorageService } from '../token/token-storage.service';
 import {UserRequest} from './user-request';
 import {UserUpdateDTO} from './user-update.dto';
 
@@ -20,6 +20,7 @@ export class UserService {
   private allUserUrl = 'http://localhost:8080/api/user/all';
   private delete = 'http://localhost:8080/api/user/delete';
   private addUser = 'http://localhost:8080/api/user/save';
+  private uploadUrl = 'http://localhost:8080/api/v1/user/upload';
 
   constructor(private http: HttpClient, private token: TokenStorageService) { }
 
@@ -51,5 +52,10 @@ export class UserService {
     return this.http.post(this.addUser, userUpdateDTO);
   }
 
-
+  uploadAvatar(file: File, id: number): Observable<any> {
+    const formData: FormData = new FormData();
+    formData.append('image', file);
+    formData.append('id', id.toString());
+    return this.http.post(this.uploadUrl, formData, );
+  }
 }

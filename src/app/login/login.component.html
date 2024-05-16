@@ -1,10 +1,5 @@
 <div class="main-section">
 <div *ngIf="isLoggedIn; else loggedOut">
-  <div class="login-success">
-    <h1>Welcome Back!</h1>
-    <p>Your login was successful.</p>
-    <a href="profile" class="dashboard-link">Go to My Profile</a>
-  </div>
 </div>
 
 <ng-template #loggedOut>
@@ -13,7 +8,7 @@
     <div class="image-text">
       Welcome to BlockHub Learning Platform
     </div>
-    <img src="assets/login.png" alt="Login Image">
+    <img src="assets/login3.png" alt="Login Image" class="login-image">
   </div>
   <div class="form-container">
     <div class="items-center">
@@ -26,16 +21,16 @@
     <form (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
       <label for="username">Username</label>
       <input type="text" id="username" name="username" [(ngModel)]="form.username" #username="ngModel" required>
-      <div *ngIf="f.submitted && username.invalid">
-        <div *ngIf="username.errors?.required">Username is required</div>
-      </div>
+<!--      <div *ngIf="f.submitted && username.invalid">-->
+<!--        <div *ngIf="username.errors?.required">Username is required</div>-->
+<!--      </div>-->
 
       <label for="password">Password</label>
       <input type="password" id="password" name="password" [(ngModel)]="form.password" #password="ngModel" required minlength="6">
-      <div *ngIf="f.submitted && password.invalid">
-        <div *ngIf="password.errors?.required">Password is required</div>
-        <div *ngIf="password.errors?.minlength">Password must be at least 6 characters</div>
-      </div>
+<!--      <div *ngIf="f.submitted && password.invalid">-->
+<!--        <div *ngIf="password.errors?.required">Password is required</div>-->
+<!--        <div *ngIf="password.errors?.minlength">Password must be at least 6 characters</div>-->
+<!--      </div>-->
 
       <button class="submit-btn" type="submit">Login</button>
       <div *ngIf="isLoginFailed" class="alert alert-danger">

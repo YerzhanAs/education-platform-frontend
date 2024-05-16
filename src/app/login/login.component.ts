@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth/auth.service';
-import { TokenStorageService } from '../auth/token-storage.service';
-import { AuthLoginInfo } from '../auth/login-info';
+import { AuthService } from '../services/auth/auth.service';
+import { TokenStorageService } from '../services/token/token-storage.service';
+import { AuthLoginInfo } from '../services/token/login-info';
 
 @Component({
   selector: 'app-login',
@@ -18,7 +18,9 @@ export class LoginComponent implements OnInit {
   roles: string[] = [];
   private loginInfo: AuthLoginInfo;
 
-  constructor(private router: Router, private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private router: Router,
+              private authService: AuthService,
+              private tokenStorage: TokenStorageService) { }
 
 
   // tslint:disable-next-line:typedef
@@ -26,13 +28,19 @@ export class LoginComponent implements OnInit {
     if (this.tokenStorage.getToken()) {
       this.isLoggedIn = true;
       this.roles = this.tokenStorage.getAuthorities();
+
+      // Navigate after reload if a redirect path is stored
+      const redirectPath = localStorage.getItem('redirectAfterLogin');
+      if (redirectPath) {
+        this.router.navigate([redirectPath]);
+        localStorage.removeItem('redirectAfterLogin'); // Clear the stored path after navigating
+      }
     }
   }
 
+
   // tslint:disable-next-line:typedef
   onSubmit() {
-    console.log(this.form);
-
     this.loginInfo = new AuthLoginInfo(
       this.form.username,
       this.form.password);
@@ -43,12 +51,15 @@ export class LoginComponent implements OnInit {
         this.tokenStorage.saveUsername(data.username);
         this.tokenStorage.saveAuthorities(data.roles);
 
-        console.log(data.token);
-
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getAuthorities();
-        this.reloadPage();
+
+        // Store the target URL to navigate after reloading
+        localStorage.setItem('redirectAfterLogin', '/profile');
+
+        // Reload the page to reset the application state
+        window.location.reload();
       },
       error => {
         this.errorMessage = error.error.message;
@@ -56,9 +67,4 @@ export class LoginComponent implements OnInit {
       }
     );
   }
-
-  reloadPage() {
-    window.location.reload();
-  }
-
 }

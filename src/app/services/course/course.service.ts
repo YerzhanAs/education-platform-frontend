@@ -15,6 +15,10 @@ export class CourseService {
     return this.http.get<CourseDTO[]>(`${this.baseUrl}/all`);
   }
 
+  getMyCourses(): Observable<CourseDTO[]> {
+    return this.http.get<CourseDTO[]>(`${this.baseUrl}/myCourses`);
+  }
+
   getCourseById(id: number): Observable<CourseDTO> {
     return this.http.get<CourseDTO>(`${this.baseUrl}/${id}`);
   }

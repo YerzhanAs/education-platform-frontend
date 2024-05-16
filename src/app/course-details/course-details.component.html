@@ -26,8 +26,8 @@
               <span>Этот курс включает</span>
               <div class="includes-item">10 видео</div>
             </div>
-            <div class="buy-btn">
-              <button class="buy-button">Купить за 15000 Т</button>
+            <div class="buy-btn" *ngIf="authority">
+              <button class="buy-button" (click)="enrollInCourse(course.id)">Регистрация на курс</button>
             </div>
           </div>
         </div>
@@ -40,7 +40,6 @@
     <div class="learning-objectives">
       <h2>Чему вы научитесь?</h2>
       <div class="columns">
-        <!-- Populate this based on course content if available -->
         <ul>
           <li>Aspect 1 of what you will learn</li>
           <li>Aspect 2 of what you will learn</li>

@@ -9,10 +9,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { UserComponent } from './user/user.component';
 import { PmComponent } from './pm/pm.component';
 import { AdminComponent } from './admin/admin.component';
-import { FormsModule } from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule } from '@angular/common/http';
 
-import { httpInterceptorProviders } from './auth/auth-interceptor';
+import { httpInterceptorProviders } from './services/token/auth-interceptor';
 import { CoursesComponent} from './courses/courses.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
@@ -20,6 +20,9 @@ import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
+import {ToastrModule} from 'ngx-toastr';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MyCourseComponent } from './my-course/my-course.component';
 
 @NgModule({
   declarations: [
@@ -36,13 +39,20 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
     FooterComponent,
     PageNotFoundComponent,
     ContactusComponent,
-    CourseDetailsComponent
+    CourseDetailsComponent,
+    MyCourseComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
+    ReactiveFormsModule,
   ],
   providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]

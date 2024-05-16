@@ -9,6 +9,4 @@ export class AppComponent implements OnInit {
   title: string;
   ngOnInit(): void {
   }
-
-
 }
