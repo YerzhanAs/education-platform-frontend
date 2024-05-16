@@ -103,7 +103,7 @@ header nav {
   z-index: 1;
   /* Adjust the top and right values as needed to position the dropdown */
   top: 100%;
-  right: 40%;
+  right: 10%;
 
 }
 

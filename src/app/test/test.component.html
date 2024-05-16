@@ -1,0 +1,17 @@
+<div *ngIf="test" class="test-container">
+  <h2 class="test-title">{{ test.name }}</h2>
+  <form [formGroup]="testForm" (ngSubmit)="onSubmit()" class="test-form">
+    <div formArrayName="questions">
+      <div *ngFor="let question of questions.controls; let i = index" [formGroupName]="i" class="question-container">
+        <p class="question-text">{{ test.questions[i].text }}</p>
+        <div class="options-container">
+          <div *ngFor="let option of test.questions[i].options" class="option">
+            <input type="radio" formControlName="selectedOption" [value]="option.id" class="option-input">
+            <label class="option-label">{{ option.text }}</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button type="submit" class="submit-button">Submit</button>
+  </form>
+</div>

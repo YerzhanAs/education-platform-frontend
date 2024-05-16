@@ -14,6 +14,7 @@ import {AuthGuard} from './auth.guard';
 import {ContactusComponent} from './contactus/contactus.component';
 import {CourseDetailsComponent} from './course-details/course-details.component';
 import {MyCourseComponent} from './my-course/my-course.component';
+import {TestComponent} from './test/test.component';
 
 
 
@@ -76,7 +77,13 @@ const routes: Routes = [
       path: '',
       redirectTo: 'profile',
       pathMatch: 'full'
+  },
+  {
+    path: 'test',
+    component: TestComponent,
+    canActivate: [AuthGuard]
   }
+
 ];
 
 @NgModule({
