@@ -23,6 +23,7 @@ import { CourseDetailsComponent } from './course-details/course-details.componen
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MyCourseComponent } from './my-course/my-course.component';
+import { TestComponent } from './test/test.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { MyCourseComponent } from './my-course/my-course.component';
     PageNotFoundComponent,
     ContactusComponent,
     CourseDetailsComponent,
-    MyCourseComponent
+    MyCourseComponent,
+    TestComponent,
   ],
   imports: [
     BrowserModule,
