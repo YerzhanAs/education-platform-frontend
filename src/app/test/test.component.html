@@ -6,7 +6,11 @@
         <p class="question-text">{{ test.questions[i].text }}</p>
         <div class="options-container">
           <div *ngFor="let option of test.questions[i].options" class="option">
-            <input type="radio" formControlName="selectedOption" [value]="option.id" class="option-input">
+            <input
+              type="radio"
+              formControlName="selectedOption"
+              [value]="option.index"
+              class="option-input">
             <label class="option-label">{{ option.text }}</label>
           </div>
         </div>

@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormArray } from '@angular/forms';
-import { TestService } from '../services/test/test.service';
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, FormArray} from '@angular/forms';
+import {TestService} from '../services/test/test.service';
 import {ToastrService} from 'ngx-toastr';
+import {TestResultResponse} from '../services/test/test-result-response';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-test',
@@ -12,7 +14,8 @@ export class TestComponent implements OnInit {
   testForm: FormGroup;
   test: any;
 
-  constructor(private fb: FormBuilder, private testService: TestService, private toastr: ToastrService) { }
+  constructor(private fb: FormBuilder, private testService: TestService, private toastr: ToastrService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.testForm = this.fb.group({
@@ -26,11 +29,20 @@ export class TestComponent implements OnInit {
   loadTest(testId: number): void {
     this.testService.getTest(testId).subscribe(test => {
       this.test = test;
-      const questionControls = this.test.questions.map(() => this.fb.group({
+      this.shuffleQuestions(this.test.questions); // Shuffle questions
+      const questionControls = this.test.questions.map(question => this.fb.group({
+        questionId: [question.id],
         selectedOption: [null]
       }));
       this.testForm.setControl('questions', this.fb.array(questionControls));
     });
+  }
+
+  shuffleQuestions(questions: any[]): void {
+    for (let i = questions.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [questions[i], questions[j]] = [questions[j], questions[i]];
+    }
   }
 
   get questions(): FormArray {
@@ -40,12 +52,21 @@ export class TestComponent implements OnInit {
   onSubmit(): void {
     const submission = {
       testId: this.testForm.value.testId,
-      selectedOptionIds: this.testForm.value.questions.map((q: any) => q.selectedOption)
+      answers: this.testForm.value.questions.map((q: any) => ({
+        questionId: q.questionId,
+        selectedOptionId: q.selectedOption
+      }))
     };
 
-    this.testService.submitTest(submission).subscribe(response => {
-      console.log(response);
-    });
-    this.toastr.success(`Вы сдали тест`, 'Тестирование сдано успешно');
+    this.testService.submitTest(submission).subscribe(
+      (response: TestResultResponse) => {
+        this.toastr.success('Вы сдали тест', 'Тестирование сдано успешно');
+        this.router.navigate(['/test-results'], {state: {score: response.score, testName: response.testName, username: response.username}});
+      },
+      error => {
+        console.error(error);
+        this.toastr.error('Произошла ошибка при сдаче теста', 'Ошибка');
+      }
+    );
   }
 }

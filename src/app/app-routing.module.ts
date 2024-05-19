@@ -15,6 +15,7 @@ import {ContactusComponent} from './contactus/contactus.component';
 import {CourseDetailsComponent} from './course-details/course-details.component';
 import {MyCourseComponent} from './my-course/my-course.component';
 import {TestComponent} from './test/test.component';
+import {TestResultsComponent} from './test-results/test-results.component';
 
 
 
@@ -82,8 +83,12 @@ const routes: Routes = [
     path: 'test',
     component: TestComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'test-results',
+    component: TestResultsComponent,
+    canActivate: [AuthGuard]
   }
-
 ];
 
 @NgModule({

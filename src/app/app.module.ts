@@ -24,6 +24,7 @@ import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MyCourseComponent } from './my-course/my-course.component';
 import { TestComponent } from './test/test.component';
+import { TestResultsComponent } from './test-results/test-results.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { TestComponent } from './test/test.component';
     CourseDetailsComponent,
     MyCourseComponent,
     TestComponent,
+    TestResultsComponent,
   ],
   imports: [
     BrowserModule,
