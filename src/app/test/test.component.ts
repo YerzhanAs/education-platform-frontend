@@ -61,11 +61,17 @@ export class TestComponent implements OnInit {
     this.testService.submitTest(submission).subscribe(
       (response: TestResultResponse) => {
         this.toastr.success('Вы сдали тест', 'Тестирование сдано успешно');
-        this.router.navigate(['/test-results'], {state: {score: response.score, testName: response.testName, username: response.username}});
+        this.router.navigate(['/test-results'], {
+          state: {
+            score: response.score,
+            testName: response.testName,
+            username: response.username,
+            totalQuestions: this.test.questions.length,
+          }});
       },
       error => {
         console.error(error);
-        this.toastr.error('Произошла ошибка при сдаче теста', 'Ошибка');
+        this.toastr.error('Пожалуйста ответте на все вопросы', 'Ошибка');
       }
     );
   }
