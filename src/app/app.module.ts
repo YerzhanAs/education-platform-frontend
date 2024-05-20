@@ -22,9 +22,10 @@ import { ContactusComponent } from './contactus/contactus.component';
 import { CourseDetailsComponent } from './course-details/course-details.component';
 import {ToastrModule} from 'ngx-toastr';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MyCourseComponent } from './my-course/my-course.component';
+import { MyCoursesComponent } from './my-courses/my-courses.component';
 import { TestComponent } from './test/test.component';
 import { TestResultsComponent } from './test-results/test-results.component';
+import { MyCourseDetailsComponent } from './my-course-details/my-course-details.component';
 
 @NgModule({
   declarations: [
@@ -42,9 +43,10 @@ import { TestResultsComponent } from './test-results/test-results.component';
     PageNotFoundComponent,
     ContactusComponent,
     CourseDetailsComponent,
-    MyCourseComponent,
+    MyCoursesComponent,
     TestComponent,
     TestResultsComponent,
+    MyCourseDetailsComponent,
   ],
   imports: [
     BrowserModule,

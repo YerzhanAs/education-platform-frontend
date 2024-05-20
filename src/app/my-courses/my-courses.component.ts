@@ -4,11 +4,11 @@ import {CourseDTO} from '../services/course/courseDTO';
 import {ToastrService} from 'ngx-toastr';
 
 @Component({
-  selector: 'app-my-course',
-  templateUrl: './my-course.component.html',
-  styleUrls: ['./my-course.component.css']
+  selector: 'app-my-courses',
+  templateUrl: './my-courses.component.html',
+  styleUrls: ['./my-courses.component.css']
 })
-export class MyCourseComponent implements OnInit {
+export class MyCoursesComponent implements OnInit {
 
   public coursesList: CourseDTO[] = [];
 

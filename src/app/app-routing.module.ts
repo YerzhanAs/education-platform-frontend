@@ -13,17 +13,23 @@ import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 import {AuthGuard} from './auth.guard';
 import {ContactusComponent} from './contactus/contactus.component';
 import {CourseDetailsComponent} from './course-details/course-details.component';
-import {MyCourseComponent} from './my-course/my-course.component';
+import {MyCoursesComponent} from './my-courses/my-courses.component';
 import {TestComponent} from './test/test.component';
 import {TestResultsComponent} from './test-results/test-results.component';
+import {MyCourseDetailsComponent} from './my-course-details/my-course-details.component';
 
 
 
 const routes: Routes = [
   {
     path: 'myCourse',
-    component: MyCourseComponent,
+    component: MyCoursesComponent,
     canActivate: [AuthGuard]
+  },
+  {
+    path: 'myCourse/:id',
+    component: MyCourseDetailsComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'notfound',

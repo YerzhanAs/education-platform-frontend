@@ -1,0 +1,36 @@
+<div class="sidebar" [class.open]="!menuHidden">
+  <button class="menu-button" (click)="toggleMenu()">&#9776;</button>
+  <div class="menu-items" [class.hidden]="menuHidden">
+    <div class="module" *ngFor="let module of modules">
+      <h1 class="module-title">{{ module.title }}</h1>
+      <span class="status completed">{{ module.status }}</span>
+    </div>
+  </div>
+</div>
+<div class="content" [class.shift-right]="!menuHidden">
+  <h1 class="content-title">{{ selectedModule.title }}</h1>
+  <section *ngIf="selectedModule.goals">
+    <h2 class="content-subtitle">Цели курса</h2>
+    <ul class="content-text">
+      <li *ngFor="let goal of selectedModule.goals">{{ goal }}</li>
+    </ul>
+  </section>
+  <section *ngIf="selectedModule.learn">
+    <h2 class="content-subtitle">Чему вы научитесь</h2>
+    <ul class="content-text">
+      <li *ngFor="let item of selectedModule.learn">{{ item }}</li>
+    </ul>
+  </section>
+  <div class="lesson-container" *ngIf="selectedModule.lessons">
+    <h2 class="content-subtitle">Данный урок содержит:</h2>
+    <div class="lesson" *ngFor="let lesson of selectedModule.lessons">
+      <div class="lesson-icon">
+        <i [ngClass]="lesson.iconClass"></i>
+      </div>
+      <div class="lesson-details">
+        <h3>{{ lesson.title }}</h3>
+        <span>{{ lesson.type }}</span>
+      </div>
+    </div>
+  </div>
+</div>
