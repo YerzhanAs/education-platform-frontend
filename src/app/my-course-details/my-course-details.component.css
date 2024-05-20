@@ -1,0 +1,198 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+
+}
+
+
+header nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px; /* Set a max-width for the container */
+  margin: 0 auto;
+  padding: 0 15px; /* Add some padding on the sides */
+}
+
+
+.logo img {
+  height: 40px; /* Adjust as per the actual logo size */
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 60px; /* Adjust the space between the links as needed */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #333; /* Adjust navbar item color as needed */
+
+}
+
+.sign-in-btn {
+  background-color: #fff  ;
+  border: none;
+  color: dark;
+  border: 1px solid black; /* This will add the black border */
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sign-in-btn:hover {
+  background-color: #2a83ff; /* Darken the button on hover */
+  color: #fff;
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 350px;
+  height: 100vh;
+  background: #fff;
+  padding: 10px 0;
+  border-right: 1px solid rgb(240, 240, 247);
+  align-items: flex-start;
+  transform: translateX(-85%);
+  transition: transform 0.7s ease; /* Использование transform для плавной анимации */
+  overflow-y: auto;
+
+}
+
+.sidebar.open {
+  z-index: 10000;
+  transform: translateX(0%);
+}
+
+.menu-button {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  background: none;
+  border: none;
+  color: #91a9f3;
+  font-size: 24px;
+  cursor: pointer;
+  display: block;
+  transition: right 0.5s;
+}
+
+.menu-items{
+  margin-top: 40px;
+}
+
+.menu-items.hidden {
+  display: none;
+}
+
+.module {
+  cursor: pointer;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #91a9f3;
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.module-title{
+  font-size: 20px;
+
+  background: linear-gradient(159.52deg, rgb(96, 171, 243) 8.93%, rgb(74, 119, 245) 50.34%, rgb(59, 91, 246) 82.55%) text;
+  -webkit-text-fill-color: transparent;
+  color: initial;
+  display: inline-block;
+}
+
+.status {
+  display: block;
+  color: #666;
+  text-align: right;
+  font-size: 0.9em;
+  margin-top: 10px;
+}
+
+.status.completed {
+  color: rgb(169, 169, 184);
+  text-align: left;
+}
+
+
+.content {
+  margin-left: 80px;
+  padding: 20px;
+  background: white;
+  min-height: 100vh;
+  transition: transform 0.7s ease;
+}
+
+.content.shift-right {
+  transform: translateX(300px);
+}
+
+.content-title{
+  font-size: 32px;
+  background: linear-gradient(159.52deg, rgb(96, 171, 243) 8.93%, rgb(74, 119, 245) 50.34%, rgb(59, 91, 246) 82.55%) text;
+  -webkit-text-fill-color: transparent;
+  color: initial;
+  display: inline-block;
+}
+
+.content-subtitle{
+  font-size: 18px;
+}
+
+.content-text{
+  font-size: 20px;
+}
+
+.lesson-container h2{
+  font-size: 20px;
+}
+
+.lesson-container {
+  padding: 20px;
+  width: 60%;
+}
+
+.lesson {
+  cursor: pointer;
+  background-color: rgb(247, 248, 252);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 30px;
+  border-bottom: 1px solid #eee;
+}
+
+.lesson:last-child {
+  border-bottom: none; /* Убираем границу у последнего элемента */
+}
+
+.lesson-icon {
+  font-size: 24px; /* Размер иконки, если используется Font Awesome */
+  color: #666; /* Цвет иконки */
+  margin-right: 10px;
+}
+
+.lesson-details h3 {
+  margin: 0;
+  color: #333; /* Цвет заголовка */
+  font-size: 16px; /* Размер шрифта заголовка */
+}
+
+.lesson-details span {
+  font-size: 14px;
+  color: rgb(169, 169, 184);
+}
+

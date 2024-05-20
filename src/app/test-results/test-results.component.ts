@@ -20,7 +20,7 @@ export class TestResultsComponent implements OnInit {
     this.score = state?.score ?? 0;
     this.testName = state?.testName ?? '';
     this.username = state?.username ?? '';
-    this.totalQuestions = state?.totalQuestions;
+    this.totalQuestions = state?.totalQuestions ?? 0;
   }
 
   ngOnInit(): void {}

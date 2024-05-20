@@ -1,20 +1,19 @@
-<div class="results-container">
-  <div class="results-header">
-    <h2 class="results-title">Test Results: {{ testName }}</h2>
+<div class="container">
+  <div class="content">
+    <div class="results-container">
+      <div class="results-header">
+        <h2 class="results-title">Test Results: {{ testName }}</h2>
+      </div>
+      <div class="results-details">
+        <div class="result-item">
+          <i class="fas fa-check result-icon"></i>
+          <p><strong>Your score:</strong> {{ score }}</p>
+        </div>
+        <div class="result-item">
+          <i class="fas fa-percentage result-icon"></i>
+          <p><strong>Percentage:</strong> {{ getPercentage() }}%</p>
+        </div>
+      </div>
+      <button routerLink="/" class="back-button">Go back to home</button>
+    </div>
   </div>
-  <div class="results-details">
-    <div class="result-item">
-      <i class="fas fa-user result-icon"></i>
-      <p><strong>Username:</strong> {{ username }}</p>
-    </div>
-    <div class="result-item">
-      <i class="fas fa-check result-icon"></i>
-      <p><strong>Your score:</strong> {{ score }}</p>
-    </div>
-    <div class="result-item">
-      <i class="fas fa-percentage result-icon"></i>
-      <p><strong>Percentage:</strong> {{ getPercentage() }}%</p>
-    </div>
-  </div>
-  <button routerLink="/" class="back-button">Go back to home</button>
-</div>

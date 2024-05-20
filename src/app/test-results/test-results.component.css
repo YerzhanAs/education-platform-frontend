@@ -1,60 +1,69 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .results-container {
-  max-width: 600px;
-  margin: 50px auto;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  background: linear-gradient(135deg, #ece9e6, #ffffff);
-  border-radius: 15px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  font-family: 'Roboto', sans-serif;
+  max-width: 400px;
+  width: 100%;
 }
 
 .results-header {
-  background-color: #007bff;
-  padding: 10px;
-  border-radius: 10px;
-  color: #fff;
+  border-bottom: 2px solid #e0e0e0;
   margin-bottom: 20px;
+  padding-bottom: 10px;
 }
 
 .results-title {
-  font-size: 26px;
   margin: 0;
+  font-size: 24px;
+  color: #333;
 }
 
 .results-details {
-  font-size: 18px;
   margin-bottom: 20px;
 }
 
 .result-item {
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
 
 .result-icon {
-  font-size: 24px;
+  color:  #007bff;
   margin-right: 10px;
-  color: #007bff;
 }
 
 .back-button {
-  padding: 12px 25px;
-  font-size: 16px;
+  display: block;
+  width: 100%;
+  padding: 10px 0;
+  background-color:  #007bff;
   color: #fff;
-  background-color: #007bff;
   border: none;
-  border-radius: 5px;
-  cursor: pointer;
+  border-radius: 4px;
+  text-align: center;
   text-decoration: none;
-  transition: background-color 0.3s;
+  font-size: 16px;
+  cursor: pointer;
 }
 
 .back-button:hover {
-  background-color: #0056b3;
+  background-color: #007bff;
 }
