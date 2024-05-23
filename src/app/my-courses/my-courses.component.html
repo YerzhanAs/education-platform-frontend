@@ -1,25 +1,37 @@
-<div class="container">
-  <div class="my-courses">
-    <h1 class="title">Мои Курсы</h1>
-  </div>
-</div>
-
-<div class="container">
-  <div class="course-list">
-    <div class="course-card" *ngFor="let course of coursesList" >
-      <div class="card-header">
-        <h2 class="course-title">{{ course.name }}</h2>
-      </div>
-      <div class="course-progress">
-        <span class="progress-text">62 из 64 уроков</span>
-        <progress value="62" max="64"></progress>
-      </div>
-      <div class="course-actions">
-        <button class="btn continue" [routerLink]="['/myCourse', course.id]">Продолжить</button>
-        <button class="btn info">Информация о курсе</button>
+<div class="page-container">
+  <div class="content-wrap">
+    <div class="container">
+      <div class="my-courses">
+        <h1 class="title">Мои Курсы</h1>
       </div>
     </div>
+
+    <div class="container">
+      <div class="course-list" *ngIf="coursesList.length > 0; else noCourses">
+        <div class="course-card" *ngFor="let course of coursesList">
+          <div class="card-header">
+            <h2 class="course-title">{{ course.name }}</h2>
+          </div>
+          <div class="course-progress">
+            <span class="progress-text">62 из 64 уроков</span>
+            <progress value="62" max="64"></progress>
+          </div>
+          <div class="course-actions">
+            <button class="btn continue" [routerLink]="['/myCourse', course.id]">Продолжить</button>
+            <button class="btn info">Информация о курсе</button>
+          </div>
+        </div>
+      </div>
+      <ng-template #noCourses>
+        <div class="no-courses">
+          <img src="path-to-empty-state-icon.png" alt="No Courses Icon" class="no-courses-icon" />
+          <h2>Пользователь не имеет курсы</h2>
+          <p>Похоже, что у вас еще нет доступных курсов. Начните изучение прямо сейчас!</p>
+          <button class="btn start-learning" [routerLink]="['/courses']">Начать изучение</button>
+        </div>
+      </ng-template>
+
+    </div>
   </div>
+
 </div>
-
-

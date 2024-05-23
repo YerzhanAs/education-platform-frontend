@@ -12,7 +12,7 @@ export class MyCoursesComponent implements OnInit {
 
   public coursesList: CourseDTO[] = [];
 
-  constructor(private courseService: CourseService,  private toastr: ToastrService) { }
+  constructor(private courseService: CourseService, private toastr: ToastrService) { }
 
   ngOnInit(): void {
     this.getMyCourses();
@@ -24,7 +24,7 @@ export class MyCoursesComponent implements OnInit {
         this.coursesList = courses;
       },
       (error) => {
-        this.toastr.error(`Ошибка получение курса: ${error.message || 'Неизвестная ошибка'}`, 'Ошибка');
+        console.log(`Ошибка получение курса: ${error.message || 'Неизвестная ошибка'}`, 'Ошибка');
       }
     );
   }
